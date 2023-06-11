@@ -1,23 +1,17 @@
-# alpha_data_solutions
+# Trade Data Web Application
 
-Trade Data Analysis Web Application
-This web application allows users to access and analyze trade data retrieved from the UN Comtrade API. Users can register for an account, log in, search for specific trade information, apply filters, and export the data in various formats.
+This web application allows users to access and analyze Kenya's trade data retrieved from the UN Comtrade API. Users can register for an account, log in, search for specific trade information, apply filters, and export the data in various formats.
 
-Features
-User Registration: Users can create an account by providing their username, email, and password.
+## Features
+  1. User Registration: Users can create an account by providing their username, email, and password.
+  2. User Login: Registered users can log in using their username and password.
+  3. Dashboard: Upon login, users are redirected to the dashboard, where they can access the application's features and functionalities.
+  4. Search Trade Data: Users can search for specific trade data by entering keywords or filters. The system fetches the relevant data from the UN Comtrade API.
+  5. Data Filtering: Users can apply filters to the retrieved trade data based on criteria such as country, product category, or trade type.
+  6. Export Data: Users have the option to export the trade data in formats such as CSV, JSON, or Excel for further analysis or integration with other systems.
 
-User Login: Registered users can log in using their username and password.
-
-Dashboard: Upon login, users are redirected to the dashboard, where they can access the application's features and functionalities.
-
-Search Trade Data: Users can search for specific trade data by entering keywords or filters. The system fetches the relevant data from the UN Comtrade API.
-
-Data Filtering: Users can apply filters to the retrieved trade data based on criteria such as country, product category, or trade type.
-
-Export Data: Users have the option to export the trade data in formats such as CSV, JSON, or Excel for further analysis or integration with other systems.
-
-Prerequisites
-Node.js: Ensure that you have Node.js installed on your system. You can download it from https://nodejs.org.
+## Prerequisites
+1. Node.js: Ensure that you have Node.js installed on your system. You can download it from https://nodejs.org.
 Getting Started
 Clone the repository:
 
