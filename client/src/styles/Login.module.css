@@ -1,0 +1,102 @@
+.formContainer{
+    font-family: Lato, sans-serif;
+    /* height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;*/
+}
+
+.formContainer form{
+    width: 25%;
+    margin: auto;
+}
+
+.logoDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.form > *{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.form p{
+    font-size: 16px;
+    text-align: center;
+}
+
+.formHolder {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.formHolder label{
+    position: absolute;
+    top: -6px;
+    left: 12px;
+    font-size: 1.2rem;
+    color: #c2c8d0;
+    background-color: #fff;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.formHolder input{
+    border: 1px solid #c2c8d0;
+    border-radius: 3px;
+    outline: none;
+    padding: 20px;
+    font-size: 1.4rem;
+}
+
+.formHolder input:focus{
+    border-color: var(--buttonBlue);
+}
+
+.formHolder input:focus + .formHolder label{
+    color: var(--buttonBlue);
+}
+
+
+.btn {
+    background-color: var(--buttonBlue);
+    color: #ffffff;
+    width: 100%;
+    border:none;
+    padding: 16px;
+    font-size: 2rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.form h2{
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form h4{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.form a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #10a37f;
+}
+
+
+@media screen and (max-width:750px){
+    .formContainer{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    .formContainer .form{
+        width: 90%;
+    }
+}
