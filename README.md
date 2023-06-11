@@ -39,11 +39,11 @@ npm start
 Open your web browser and access the application at http://localhost:3000.
 
 Technology Stack
-1. React: JavaScript library for building the user interface.
-2. Node.js: JavaScript runtime for the server-side application.
-3. Express: Web framework for building the API endpoints.
-4. UN Comtrade API: External API for retrieving trade data.
-5. MongoDB: NoSQL database for storing user information.
+1. `React`: JavaScript library for building the user interface.
+2. `Node.js`: JavaScript runtime for the server-side application.
+3. `Express`: Web framework for building the API endpoints.
+4. `UN Comtrade API`: External API for retrieving trade data.
+5. `MongoDB`: NoSQL database for storing user information.
 
 Folder Structure
 
