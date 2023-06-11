@@ -9,7 +9,7 @@
   --headingColor:#293745;
   --paragColor:#586276;
   --buttonBlue:#0b9ed0;
-  --marginTop:50px;
+  --marginTop:20px;
   --marginBottom:50px;
   --smallMt:20px;
   --boxShadow:0 0 17px 3px rgb(184 184 184 / 50%);
@@ -22,13 +22,25 @@
 }
 
 html,
-body{
+body,
+#root{
   max-width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
   font-size: 0.85rem;
   background-color: var(--background);
   font-family: 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+}
+
+.main-holders{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 a{

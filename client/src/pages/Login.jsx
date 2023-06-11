@@ -25,7 +25,10 @@ const Login = () => {
 
                 <button className={styles.btn}>Login</button>
                 <h4>
-                    Dont have an Account ? <Link to={}>Sign up</Link>
+                    Dont have an Account ? <Link to={"/signup"}>Sign up</Link>
+                </h4>
+                <h4>
+                    Go<Link to={"/"}> Home</Link>
                 </h4>
 
             </form>

@@ -1,6 +1,6 @@
 import styles from "../styles/Login.module.css"
 import logo from "../assets/logo.png"
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
@@ -29,7 +29,10 @@ const Signup = () => {
 
                 <button className={styles.btn}>Sign up</button>
                 <h4>
-                    Dont have an Account ? <a>Login</a>
+                    Dont have an Account ? <Link to={"/login"}>Login</Link>
+                </h4>
+                <h4>
+                    Go <Link to={"/"}>Home</Link>
                 </h4>
 
             </form>
