@@ -4,10 +4,10 @@ import {Link} from 'react-router-dom'
 
 const Landing = () => {
     return (
-        <div>
+        <div className={styles.landingContainer}>
             <div className={styles.formContainer}>
                 <div className={styles.logoDiv}>
-                    <img src={logo} alt="" />
+                    <img src={logo} alt="" width={"75"} />
                 </div>
 
                 <h2>Welcome to Alpha Data Solutions</h2>
