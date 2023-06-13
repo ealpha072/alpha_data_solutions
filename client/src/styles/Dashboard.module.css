@@ -62,31 +62,14 @@ nav div > img{
 /*SERACH DIV*/
 .searchDiv{
     width: 95%;
-    margin:  50px auto ;
+    margin:  50px auto;
+    display: flex;
 }
 
-.searchDiv a{
-    background-color: var(--buttonBlue);
-    color: #ffffff;
-    border:none;
-    padding: 12px;
-    font-size: 2rem;
-    border-radius: 3px;
-    cursor: pointer;
-}
-
-.pastResults{
-    width: 55%;
-    margin:  30px;
+.pastResults,
+.countryProfile{
+    width: 48%;
+    margin: auto;
     border: 1px solid var(--paragColor);
     height: 300px;
-}
-
-.pastResults > div:first-child{
-    background-color: var(--paragColor);
-}
-
-.pastResults h1{
-    padding: 12px;
-    color: #f8fafb;
 }

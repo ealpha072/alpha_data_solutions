@@ -31,17 +31,18 @@ const Home = () => {
                 </div>
 
                 <div className={styles.searchDiv}>
-                    <Link>Data Search</Link>
+                    <div className={styles.pastResults}>
+                        <Link>Data Search</Link>
+                        <div>
+                            <p>Past Results</p>
+                        </div>
+                    </div>
+                    <div className={styles.countryProfile}>
+
+                    </div>
                 </div>
 
-                <div className={styles.pastResults}>
-                    <div className={styles.header}>
-                        <h1>Past Search Results</h1>
-                    </div>
-                    <div>
-
-                    </div>
-                </div>
+                
             </div>
         </div>
     )
