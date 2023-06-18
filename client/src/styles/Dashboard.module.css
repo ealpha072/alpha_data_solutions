@@ -150,3 +150,24 @@
     padding: 8px 20px;
     font-size: 1.2rem;
 }
+
+
+.resultsHolder h1{
+    font-size: 16px;
+    text-align: left;
+}
+
+.resultsHolder table{
+    width: 99%;
+    margin: 10px auto;
+    border: 1px solid #D6DCE5;
+}
+
+thead{
+    background-color: #D6DCE5;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}

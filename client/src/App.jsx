@@ -7,6 +7,7 @@ import Login from './pages/login'
 import Signup from './pages/signup'
 import Home from './pages/Home'
 import Search from './pages/Search'
+import Searchresults from './pages/Searchresults'
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path='/signup' element={< Signup/>}/>
           <Route path='/dashboard' element={< Home/>}/>
           <Route path='/search' element={<Search />}/>
+          <Route path='/searchquery_results' element={<Searchresults />}/>
         </Routes>
       </Router>
     </div>
