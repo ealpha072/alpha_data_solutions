@@ -11,7 +11,7 @@ const Home = () => {
                 </div>
 
                 <div  className={styles.actions}>
-                    <div>
+                    <div    >
                         <Link to='/'>Profile Info</Link>
                     </div>
                     <div>
@@ -32,13 +32,25 @@ const Home = () => {
 
                 <div className={styles.searchDiv}>
                     <div className={styles.pastResults}>
-                        <Link>Data Search</Link>
-                        <div>
-                            <p>Past Results</p>
+                        <div className={styles.button}>
+                            <Link to={""}>Data Search</Link>
+                        </div>
+                        <div className={styles.past}>
+                            <div>
+                                <h3>Past Results</h3>
+                            </div>
+                            <div>
+
+                            </div>
                         </div>
                     </div>
                     <div className={styles.countryProfile}>
+                        <div>
+                            <h3>Country Trade Profile</h3>
+                        </div>
+                        <div>
 
+                        </div>
                     </div>
                 </div>
 

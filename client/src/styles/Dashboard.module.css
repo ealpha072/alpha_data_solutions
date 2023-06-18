@@ -66,10 +66,45 @@ nav div > img{
     display: flex;
 }
 
-.pastResults,
+.pastResults{
+    width: 48%;
+    margin: auto;
+    height: 300px;
+}
+
 .countryProfile{
     width: 48%;
     margin: auto;
-    border: 1px solid var(--paragColor);
+    border: 1px solid #D6DCE5;
     height: 300px;
+}
+
+.button{
+    margin: 20px auto;
+}
+
+.button a{
+    background-color: #D6DCE5;
+    padding:10px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.past{
+    border: 1px solid #D6DCE5;
+    height: 300px;
+}
+
+.past > div:first-child,
+.countryProfile > div:first-child{
+    background-color: #D6DCE5;
+}
+
+.past > div:first-child h3,
+.countryProfile > div:first-child h3{
+    color: #333333;
+    padding: 12px;
+    font-size: 14px;
+    text-transform: uppercase;
 }
