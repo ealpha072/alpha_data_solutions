@@ -1,24 +1,12 @@
 import styles from "../styles/Dashboard.module.css"
 import logo from "../assets/logo.png"
 import {Link} from 'react-router-dom'
+import Header from "../components/Header"
 
 const Home = () => {
     return (
         <div className={styles.mainContainer}>
-            <nav>
-                <div>
-                    <img src={logo} alt="" width={'55px'}/>
-                </div>
-
-                <div  className={styles.actions}>
-                    <div    >
-                        <Link to='/'>Profile Info</Link>
-                    </div>
-                    <div>
-                        <Link to='/'>Log out</Link>
-                    </div>
-                </div>
-            </nav>
+            <Header  logo={logo} styles={styles} />
 
             <div className={styles.homeContainer}>
                 <div className={styles.homeDiv}>
