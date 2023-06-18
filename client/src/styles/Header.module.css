@@ -1,0 +1,28 @@
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4472C4;
+}
+
+nav > div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+nav div > img{
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.actions{
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions div a {
+    padding-right: 1.5rem;
+    text-decoration: none;
+    color:#ffffff;
+    font-size: 1.2rem;
+}

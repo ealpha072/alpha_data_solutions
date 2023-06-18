@@ -1,0 +1,30 @@
+.mainContainer{
+    background-color: #f8fafb;
+    flex-grow: 1;
+}
+
+/*homeContainer*/
+
+.homeContainer{
+    width: 80%;
+    margin: auto;
+}
+
+.homeDiv{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.homeDiv h1{
+    color: #293745;
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.homeDiv p{
+    font-size: 17px;
+    color: var(--paragColor);
+    text-align: center;
+}

@@ -6,6 +6,7 @@ import './App.css'
 import Login from './pages/login'
 import Signup from './pages/signup'
 import Home from './pages/Home'
+import Search from './pages/Search'
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={< Signup/>}/>
           <Route path='/dashboard' element={< Home/>}/>
+          <Route path='/search' element={<Search />}/>
         </Routes>
       </Router>
     </div>

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom"
-import PropTypes from "prop-types"
+import logo from "../assets/logo.png"
+import styles from "../styles/Header.module.css"
 
-const Header = ({logo, styles}) => {
+const Header = () => {
     return (
         <nav>
             <div>
@@ -18,11 +19,6 @@ const Header = ({logo, styles}) => {
             </div>
         </nav>
   );
-}
-
-Header.propTypes  ={
-    logo: PropTypes.string.isRequired,
-    styles: PropTypes.object.isRequired,
 }
 
 export default Header
