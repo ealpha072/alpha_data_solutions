@@ -171,3 +171,13 @@ th, td {
     padding: 8px;
     text-align: left;
 }
+
+tr > th:last-child{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+th > a{
+    font-size: 1.5rem;
+}

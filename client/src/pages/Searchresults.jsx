@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import logo from "../assets/logo.png"
 import styles from "../styles/Dashboard.module.css"
+import ModalOverlay from "../components/Modal"
 
 const Searchresults = () => {
+    
     return (
         <div className={styles.mainContainer}>
             <Header logo={logo} styles={styles}/>
@@ -37,7 +40,10 @@ const Searchresults = () => {
                                             <th>Partner</th>
                                             <th>Trade Value</th>
                                             <th>Quantity</th>
-                                            <th>Quantity Unit</th>
+                                            <th>
+                                                Quantity Unit
+                                                <Link> <i className="fa-sharp fa-solid fa-download"></i></Link>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -53,6 +59,8 @@ const Searchresults = () => {
                     </div>
                 </div>
             </div>
+
+            <ModalOverlay />
         </div>
     )
 }
