@@ -83,6 +83,14 @@
 }
 
 /*SEARCH PAGE*/
+.searchPage{
+    width: 95%;
+    margin:  50px auto;
+}
+
+.searchPage > div{
+    margin-bottom: 20px;
+}
 
 .searchBox{
     width: 90%;
@@ -93,5 +101,52 @@
     margin-top: -10px;
     border: 1px solid #D6DCE5;
     border-radius: 6px;
-    height: 200px;
+}
+
+.searchBox > div:last-child h1{
+    padding: 10px;
+}
+
+.rowOne{
+    display: flex;
+    width: 90%;
+    margin: 10px auto;
+}
+
+.rowOne > div{
+    padding: 20px 10px;
+    width: 30%;
+    margin: auto;
+}
+
+.rowTwo{
+    display: flex;
+    width: 90%;
+    margin: 10px auto;
+    justify-content: start;
+}
+
+.rowTwo > div{
+    width: 40%;
+}
+
+.inputGroup{
+    display: flex;
+    align-items: center;
+}
+
+.inputGroup label{
+    width: 30%;
+    font-size: 1.2rem;
+    font-weight: 700;
+
+}
+
+.inputGroup select{
+    width: 70%;
+    border: 1px solid #c2c8d0;
+    border-radius: 10px;
+    outline: none;
+    padding: 8px 20px;
+    font-size: 1.2rem;
 }

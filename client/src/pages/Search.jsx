@@ -13,18 +13,74 @@ const Search = () => {
                     <div>
                         <h1>Search Trade Data. Faster</h1>
                         <p>
-                           Search Keny&apos;s Trade Data with our one stop data solution.
+                           Search Kenya&apos;s Trade Data with our one stop data solution.
                         </p>
                     </div>
                 </div>
 
-                <div className={styles.searchDiv}>
+                <div className={styles.searchPage}>
                     <div className={styles.searchBox}>
                         <div>
                             <h3>SEARCH DATA</h3>
                         </div>
+                        <div className={styles.rowHolder}>
+                            {/* FIRST ROW */}
+                            <div className={styles.rowOne}>
+                                <div className="row-item">
+                                    <div className={styles.inputGroup}>
+                                        <label htmlFor="">Reporter</label>
+                                        <select name="" id="">
+                                            <option value="" selected> Kenya </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="row-item">
+                                    <div className={styles.inputGroup}>
+                                        <label htmlFor="">Year</label>
+                                        <select name="" id="">
+                                            <option value="" selected> Kenya </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div className="row-item">
+                                    <div className={styles.inputGroup}>
+                                        <label htmlFor="">Trade Flow</label>
+                                        <select name="" id="">
+                                            <option value="" selected> Kenya </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            {/* SECOND ROW */}
+                            <div className={styles.rowTwo}>
+                                <div className={styles.inputGroup}>
+                                    <label htmlFor="">Partner</label>
+                                    <select name="" id="">
+                                        <option value="" selected> Kenya </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            {/* THIRD ROW */}
+                            <div className={styles.rowTwo}>
+                                <div className={styles.inputGroup}>
+                                    <label htmlFor="">HS CODE</label>
+                                    <select name="" id="">
+                                        <option value="" selected> Kenya </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.searchBox}>
                         <div>
-                            
+                            <h3>SEARCH DATA STATUS</h3>
+                        </div>
+                        <div>
+                            <h1>Searching...</h1>
                         </div>
                     </div>
                 </div>
