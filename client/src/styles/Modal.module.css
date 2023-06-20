@@ -27,15 +27,39 @@
     margin-bottom: 6px;
 }
 
-.modalContent > div:first-child{
-    margin-top: 20px;
-}
-
 .modalContent > div:last-child{
     width: 50%;
     margin: 20px auto;
     display: flex;
     justify-content: space-around;
+}
+
+.headerContent{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.headerContent label{
+    color: #293745;
+    font-size: 12px;
+    width: 40%;
+    font-weight: 800;
+}
+
+.headerContent select{
+    width: 60%;
+    border: 1px solid #c2c8d0;
+    border-radius: 8px;
+    outline: none;
+    padding: 8px 20px;
+    font-size: 1.2rem;
+}
+
+.headerContent select option{
+    background-color: #293745;
+    padding: 6px;
 }
 
 .modalContent button{
