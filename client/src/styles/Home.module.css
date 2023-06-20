@@ -5,7 +5,6 @@
 }
 
 .formContainer{
-    font-family: Lato, sans-serif;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -34,14 +33,16 @@
 }
 
 h2{
-    font-size: 24px;
-    font-weight: bold;
+    color: #293745;
+    font-size: 36px;
+    font-weight: 800;
     text-align: center;
 }
 
 h4{
+    color: #293745;
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 800;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
