@@ -73,8 +73,15 @@ const Search = () => {
                                         </select>
                                     </div>
                                 </div>
+
+                                <div className={styles.rowTwo}>
+                                    <button type="submit"> Search</button>
+                                </div>
+
                             </div>
                         </div>
+
+                        
                     </form>
 
                     <div className={styles.searchBox}>
