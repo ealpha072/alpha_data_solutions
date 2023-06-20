@@ -3,6 +3,7 @@ import logo from "../assets/logo.png"
 import {Link} from 'react-router-dom'
 
 const Landing = () => {
+
     return (
         <div className={styles.landingContainer}>
             <div className={styles.formContainer}>

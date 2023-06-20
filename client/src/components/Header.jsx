@@ -14,7 +14,7 @@ const Header = () => {
                     <Link to="/">Profile Info</Link>
                 </div>
                 <div>
-                    <Link to="/">Log out</Link>
+                    <Link to="/logout">Log out</Link>
                 </div>
             </div>
         </nav>

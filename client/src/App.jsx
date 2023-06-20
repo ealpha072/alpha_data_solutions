@@ -8,6 +8,7 @@ import Signup from './pages/signup'
 import Home from './pages/Home'
 import Search from './pages/Search'
 import Searchresults from './pages/Searchresults'
+import Logout from './pages/Logout'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/dashboard' element={< Home/>}/>
           <Route path='/search' element={<Search />}/>
           <Route path='/searchquery_results' element={<Searchresults />}/>
+          <Route path='/logout' element={<Logout />} />
         </Routes>
       </Router>
     </div>
