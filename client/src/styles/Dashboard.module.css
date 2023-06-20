@@ -94,7 +94,7 @@
 
 .searchBox{
     width: 90%;
-    margin: auto;
+    margin: 20px auto;
 }
 
 .searchBox > div:last-child{
@@ -150,7 +150,6 @@
     padding: 8px 20px;
     font-size: 1.2rem;
 }
-
 
 .resultsHolder h1{
     font-size: 16px;

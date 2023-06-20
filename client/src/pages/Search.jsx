@@ -19,61 +19,63 @@ const Search = () => {
                 </div>
 
                 <div className={styles.searchPage}>
-                    <div className={styles.searchBox}>
-                        <div>
-                            <h3>SEARCH DATA</h3>
-                        </div>
-                        <div className={styles.rowHolder}>
-                            {/* FIRST ROW */}
-                            <div className={styles.rowOne}>
-                                <div className="row-item">
-                                    <div className={styles.inputGroup}>
-                                        <label htmlFor="">Reporter</label>
-                                        <select name="" id="">
-                                            <option value="" selected> Kenya </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="row-item">
-                                    <div className={styles.inputGroup}>
-                                        <label htmlFor="">Year</label>
-                                        <select name="" id="">
-                                            <option value="" selected> Kenya </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div className="row-item">
-                                    <div className={styles.inputGroup}>
-                                        <label htmlFor="">Trade Flow</label>
-                                        <select name="" id="">
-                                            <option value="" selected> Kenya </option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
+                    <form>
+                        <div className={styles.searchBox}>
+                            <div>
+                                <h3>SEARCH DATA</h3>
                             </div>
+                            <div className={styles.rowHolder}>
+                                {/* FIRST ROW */}
+                                <div className={styles.rowOne}>
+                                    <div className="row-item">
+                                        <div className={styles.inputGroup}>
+                                            <label htmlFor="">Reporter</label>
+                                            <select name="" id="">
+                                                <option value="" selected> Kenya </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="row-item">
+                                        <div className={styles.inputGroup}>
+                                            <label htmlFor="">Year</label>
+                                            <select name="" id="">
+                                                <option value="" selected> Kenya </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="row-item">
+                                        <div className={styles.inputGroup}>
+                                            <label htmlFor="">Trade Flow</label>
+                                            <select name="" id="">
+                                                <option value="" selected> Kenya </option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
 
-                            {/* SECOND ROW */}
-                            <div className={styles.rowTwo}>
-                                <div className={styles.inputGroup}>
-                                    <label htmlFor="">Partner</label>
-                                    <select name="" id="">
-                                        <option value="" selected> Kenya </option>
-                                    </select>
+                                {/* SECOND ROW */}
+                                <div className={styles.rowTwo}>
+                                    <div className={styles.inputGroup}>
+                                        <label htmlFor="">Partner</label>
+                                        <select name="" id="">
+                                            <option value="" selected> Kenya </option>
+                                        </select>
+                                    </div>
                                 </div>
-                            </div>
 
-                            {/* THIRD ROW */}
-                            <div className={styles.rowTwo}>
-                                <div className={styles.inputGroup}>
-                                    <label htmlFor="">HS CODE</label>
-                                    <select name="" id="">
-                                        <option value="" selected> Kenya </option>
-                                    </select>
+                                {/* THIRD ROW */}
+                                <div className={styles.rowTwo}>
+                                    <div className={styles.inputGroup}>
+                                        <label htmlFor="">HS CODE</label>
+                                        <select name="" id="">
+                                            <option value="" selected> Kenya </option>
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
 
                     <div className={styles.searchBox}>
                         <div>

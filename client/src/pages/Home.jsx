@@ -21,7 +21,7 @@ const Home = () => {
                 <div className={styles.searchDiv}>
                     <div className={styles.pastResults}>
                         <div className={styles.button}>
-                            <Link to={""}>Data Search</Link>
+                            <Link to="/search">Data Search</Link>
                         </div>
                         <div className={styles.past}>
                             <div>
