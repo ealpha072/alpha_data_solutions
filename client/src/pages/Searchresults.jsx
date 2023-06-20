@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import logo from "../assets/logo.png"
@@ -5,11 +6,15 @@ import styles from "../styles/Dashboard.module.css"
 import ModalOverlay from "../components/Modal"
 
 const Searchresults = () => {
-    
+    const [isOpen, setisOpen] = useState(false)
+
+    const openModal = () => {setisOpen(true)}
+    const closeModal = () => {setisOpen(false)}
+
+
     return (
         <div className={styles.mainContainer}>
             <Header logo={logo} styles={styles}/>
-
 
             <div className={styles.homeContainer}>
                 <div className={styles.homeDiv}>
@@ -42,7 +47,7 @@ const Searchresults = () => {
                                             <th>Quantity</th>
                                             <th>
                                                 Quantity Unit
-                                                <Link> <i className="fa-sharp fa-solid fa-download"></i></Link>
+                                                <Link onClick={openModal}> <i className="fa-sharp fa-solid fa-download"></i></Link>
                                             </th>
                                         </tr>
                                     </thead>
@@ -59,8 +64,14 @@ const Searchresults = () => {
                     </div>
                 </div>
             </div>
-
-            <ModalOverlay />
+            
+            {isOpen && 
+                <ModalOverlay 
+                    handleClick={closeModal} 
+                    style={styles.close} 
+                    open={isOpen} 
+                />
+            }
         </div>
     )
 }
