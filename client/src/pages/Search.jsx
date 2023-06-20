@@ -75,13 +75,13 @@ const Search = () => {
                                 </div>
 
                                 <div className={styles.rowTwo}>
-                                    <button type="submit"> Search</button>
+                                    
+                                    <button type="submit">Search </button>
+                                    
                                 </div>
 
                             </div>
                         </div>
-
-                        
                     </form>
 
                     <div className={styles.searchBox}>
