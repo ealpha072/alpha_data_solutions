@@ -1,4 +1,5 @@
 import express from "express"
+import config from "./utils/config.js"
 import mongoose from "mongoose";
 import cors from "cors"
 
