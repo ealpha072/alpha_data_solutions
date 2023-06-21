@@ -75,9 +75,7 @@ const Search = () => {
                                 </div>
 
                                 <div className={styles.rowTwo}>
-                                    
                                     <button type="submit">Search </button>
-                                    
                                 </div>
 
                             </div>

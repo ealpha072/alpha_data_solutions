@@ -1,11 +1,9 @@
-
 .mainContainer{
     background-color: #f8fafb;
     flex-grow: 1;
 }
 
 /*homeContainer*/
-
 .homeContainer{
     width: 80%;
     margin: auto;
