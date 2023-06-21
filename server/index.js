@@ -12,6 +12,7 @@ const URL = config.URL
 logger.info(`Attempting connection to: ${URL}`)
 
 mongoose.set("strictQuery", true)
+
 mongoose
 .connect(URL)
 .then(()=>{

@@ -9,7 +9,7 @@ const requestLogger = (req, res, next) => {
     next()
 }
 
-const errorHandler = (errror, req, res, next) => {
+const errorHandler = (error, req, res, next) => {
     logger.error(error.message)
     next(error)
 }
