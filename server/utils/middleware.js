@@ -1,4 +1,4 @@
-import logger from "./logger";
+import logger from "./logger.js";
 
 const requestLogger = (req, res, next) => {
     logger.info("Method: ", req.method)
@@ -18,4 +18,4 @@ const unknownEndpoint = (req, res) => {
     res.status(400).json({error:"Unknown endpoint"})
 }
 
-export default {requestLogger, errorHandler}
+export default {requestLogger, errorHandler, unknownEndpoint}
