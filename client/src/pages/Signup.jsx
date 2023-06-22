@@ -1,4 +1,4 @@
-import { useState } from "react";
+//import { useState } from "react";
 import styles from "../styles/Login.module.css"
 import logo from "../assets/logo.png"
 import { Link } from "react-router-dom";
@@ -27,17 +27,35 @@ const Signup = () => {
                     </div>
                     <div className={styles.formHolder}>
                         <label htmlFor="email">Email Address</label>
-                        <input type="email" placeholder="Enter email address" name="email" value={formData.email} onChange={handleInputChange} />
+                        <input 
+                            type="email" 
+                            placeholder="Enter email address" 
+                            name="email" 
+                            value={formData.email} 
+                            onChange={handleInputChange} 
+                        />
                     </div>
 
                     <div className={styles.formHolder}>
                         <label htmlFor="password">Password</label>
-                        <input type="password" placeholder="Enter password" name="password" value={formData.password} onChange={handleInputChange} />
+                        <input 
+                            type="password" 
+                            placeholder="Enter password" 
+                            name="password" 
+                            value={formData.password} 
+                            onChange={handleInputChange} 
+                        />
                     </div>
 
                     <div className={styles.formHolder}>
                         <label htmlFor="password">Confirm Password</label>
-                        <input type="password" placeholder="Re-enter password" name="confirmPassword" value={formData.confirmPassword} onChange={handleInputChange} />
+                        <input 
+                            type="password" 
+                            placeholder="Re-enter password" 
+                            name="confirmPassword" 
+                            value={formData.confirmPassword} 
+                            onChange={handleInputChange} 
+                        />
                     </div>
 
                     <button className={styles.btn} type="submit">Sign up</button>
