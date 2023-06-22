@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors"
 import logger from "./utils/logger.js";
 import middleware from "./utils/middleware.js";
+import appRoute from "./routes/route.js";
 
 const app = express()
 
@@ -27,5 +28,6 @@ mongoose
 
 app.use(express.json())
 app.use(middleware.requestLogger)
+app.use("/app", appRoute)
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)

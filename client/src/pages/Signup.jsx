@@ -34,7 +34,6 @@ const Signup = () => {
                 <h4>
                     Go <Link to={"/"}>Home</Link>
                 </h4>
-
             </form>
         </div>
     </div>
