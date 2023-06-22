@@ -59,7 +59,6 @@
     color: var(--buttonBlue);
 }
 
-
 .btn {
     background-color: var(--buttonBlue);
     color: #ffffff;
@@ -88,7 +87,6 @@
     text-decoration: none;
     color: #10a37f;
 }
-
 
 @media screen and (max-width:750px){
     .formContainer{
