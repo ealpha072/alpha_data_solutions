@@ -3,6 +3,7 @@ import styles from "../styles/Login.module.css"
 import logo from "../assets/logo.png"
 import { Link } from "react-router-dom";
 import useForm from "../Hooks/Formhook";
+import userService from "../services/user";
 
 const Signup = () => {
 
@@ -14,6 +15,7 @@ const Signup = () => {
 
     const onSubmit = (formData) => {
         console.log(formData)
+        userService.signUp(formData)
     }
 
     const {formData, handleInputChange, handleSubmit} = useForm(initialState, onSubmit)

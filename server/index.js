@@ -7,6 +7,7 @@ import middleware from "./utils/middleware.js";
 import appRoute from "./routes/route.js";
 
 const app = express()
+app.use(cors())
 
 const PORT = config.PORT
 const URL = config.URL
@@ -27,7 +28,8 @@ mongoose
 })
 
 app.use(express.json())
+
 app.use(middleware.requestLogger)
-app.use("/app", appRoute)
+app.use("/user", appRoute)
 app.use(middleware.unknownEndpoint)
 app.use(middleware.errorHandler)

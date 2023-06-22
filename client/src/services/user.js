@@ -1,8 +1,8 @@
 import axios from "axios"
-const baseUrl = "http://localhost:5000/app"
+const baseUrl = "http://localhost:5000/user"
 
-const signUp = async () => {
-    const request = axios.get(`${baseUrl}/signup`)
+const signUp = async (data) => {
+    const request = axios.post(`${baseUrl}/signup`, data)
     const response = await request
     return response.data
 }
