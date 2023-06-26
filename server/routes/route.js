@@ -13,12 +13,12 @@ appRoute.post("/signup", async (req, res, next) => {
     const {email, password} = req.body
     try {
         //see if user allready exists
-        const user = User.findOne({email:email})
+        const user = await User.findOne({email:email})
 
         if(!user){
             //salting of password
             const saltRounds = 10
-            const passHash = await bcrypt.hash(saltRounds, password)
+            const passHash = bcrypt.hash(saltRounds, password)
             const newUser = new User({email, passHash})
             const savedUser = await newUser.save()
             res.status(201).json(savedUser)
