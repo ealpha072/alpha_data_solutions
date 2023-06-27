@@ -18,10 +18,11 @@ appRoute.post("/signup", async (req, res, next) => {
         if(!user){
             //salting of password
             const saltRounds = 10
-            const passHash = bcrypt.hash(saltRounds, password)
-            const newUser = new User({email, passHash})
+            const passwordHash = await bcrypt.hash(password, saltRounds)
+            console.log(passHash)
+            const newUser = new User({email, passwordHash})
             const savedUser = await newUser.save()
-            res.status(201).json(savedUser)
+            res.status(201).json({message:"User registered successfully", user:savedUser})
         }else{
             res.status(400).json({message:"Email already taken"})
         }
