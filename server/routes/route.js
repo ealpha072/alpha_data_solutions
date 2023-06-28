@@ -19,7 +19,6 @@ appRoute.post("/signup", async (req, res, next) => {
             //salting of password
             const saltRounds = 10
             const passwordHash = await bcrypt.hash(password, saltRounds)
-            console.log(passHash)
             const newUser = new User({email, passwordHash})
             const savedUser = await newUser.save()
             res.status(201).json({message:"User registered successfully", user:savedUser})
