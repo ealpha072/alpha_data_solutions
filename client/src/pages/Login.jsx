@@ -24,7 +24,7 @@ const Login = () => {
             setLoginmessage(`${response.message}. Taking you to dashboard in 5 seconds`)
 
             const token = response.token
-            localStorage.setItem("token", token)
+            sessionStorage.setItem("token", token)
 
             setTimeout(() => {
                 navigate("/dashboard")

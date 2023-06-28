@@ -1,0 +1,1 @@
+GET http://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/404/partner/all/product/730820/year/2020/datatype/reported?format=JSON
