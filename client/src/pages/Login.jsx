@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {useNavigate} from "react-router-dom";
 import styles from "../styles/Login.module.css"
 import logo from "../assets/logo.png"
 import { Link } from "react-router-dom";
@@ -6,6 +7,7 @@ import useForm from "../Hooks/Formhook";
 import userService from "../services/user";
 
 const Login = () => {
+    const navigate = useNavigate()
     const [loginMessage, setLoginmessage] = useState("")
 
     const initialState = {
@@ -19,7 +21,14 @@ const Login = () => {
         userService.login(formData)
         .then(response => {
             console.log(response)
-            //setLoginmessage(response.message)
+            setLoginmessage(`${response.message}. Taking you to dashboard in 5 seconds`)
+
+            const token = response.token
+            localStorage.setItem("token", token)
+
+            setTimeout(() => {
+                navigate("/dashboard")
+            }, 5000);
         })
         .catch(err => {
             console.log(err.response.data.message)
@@ -43,7 +52,11 @@ const Login = () => {
 
                     <h2>Welcome Back</h2>
 
-                    {loginMessage && <div className={styles.errorDiv}><h3>{loginMessage}</h3></div> }
+                    {loginMessage && 
+                        <div className={loginMessage.includes('successfull') ? styles.successDiv : styles.errorDiv }>
+                            <h3>{loginMessage}</h3>
+                        </div> 
+                    }
 
                     <div className={styles.formHolder}>
                         <label htmlFor="email">Email Address</label>

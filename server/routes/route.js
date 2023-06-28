@@ -2,8 +2,16 @@ import express from "express"
 import logger from "../utils/logger.js"
 import bcrypt from "bcrypt"
 import User from "../models/users.js"
+import { randomBytes } from "crypto"
 
 const appRoute = express.Router()
+
+const generateRandomString = () => {
+    const randomNum = randomBytes(20);
+    const randomString = randomNum.toString('hex');
+    return randomString;
+};
+
 
 appRoute.get("/", (req, res) => {
     res.send("Hello World")
@@ -42,7 +50,9 @@ appRoute.post('/login', async (req, res, next) => {
         if(!(findUser && passwordMatch )){
             res.status(400).json({message:"Invalid email or password please try again"})
         }else{
-            res.status(200).json({message: "Login successfull", user:findUser})
+            const randomToken = generateRandomString()
+            console.log(randomToken)
+            res.status(200).json({message: "Login successfull", user:findUser, token:randomToken})
         }
     } catch (error) {
         logger.error(error.message)
