@@ -1,11 +1,14 @@
+import { useState } from "react";
 import styles from "../styles/Login.module.css"
 import logo from "../assets/logo.png"
 import { Link } from "react-router-dom";
 import useForm from "../Hooks/Formhook";
 import userService from "../services/user";
-//import userService from "../services/user";
 
 const Login = () => {
+    const [loginMessage, setLoginmessage] = useState("")
+
+
     const initialState = {
         email:"",
         password:"",
@@ -14,6 +17,14 @@ const Login = () => {
     const onSubmit = (formData) => {
         console.log(formData)
         userService.login(formData)
+        .then(response => {
+            console.log(response)
+            //setLoginmessage(response.message)
+        })
+        .catch(err => {
+            console.log(err.response.data.message)
+            setLoginmessage(err.response.data.message)
+        })
     }
 
     const {formData, handleInputChange, handleSubmit} = useForm(initialState, onSubmit)
@@ -27,6 +38,8 @@ const Login = () => {
                     </div>
 
                     <h2>Welcome Back</h2>
+
+                    {loginMessage && <div className={styles.errorDiv}><h3>{loginMessage}</h3></div> }
 
                     <div className={styles.formHolder}>
                         <label htmlFor="email">Email Address</label>

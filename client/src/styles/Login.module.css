@@ -26,6 +26,18 @@
     text-align: center;
 }
 
+.errorDiv{
+    color:red;
+    font-weight: 100;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.errorDiv h3{
+    padding: 10px;
+}
+
 .formHolder {
     display: flex;
     flex-direction: column;
