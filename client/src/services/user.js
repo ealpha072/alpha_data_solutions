@@ -7,8 +7,8 @@ const signUp = async (data) => {
     return response.data
 }
 
-const login = async () => {
-    const request = axios.get(`${baseUrl}/login`)
+const login = async (data) => {
+    const request = axios.post(`${baseUrl}/login`, data)
     const response = await request
     return response.data
 }
