@@ -34,8 +34,12 @@
     border-radius: 6px;
 }
 
-.errorDiv h3{
-    padding: 10px;
+.successDiv{
+    color:green;
+    font-weight: 100;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 6px;
 }
 
 .formHolder {

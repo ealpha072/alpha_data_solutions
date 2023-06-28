@@ -1,12 +1,12 @@
 import { useState } from "react";
 import styles from "../styles/Login.module.css"
 import logo from "../assets/logo.png"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useForm from "../Hooks/Formhook";
 import userService from "../services/user";
 
 const Signup = () => {
-
+    const navigate = useNavigate()
     const [signupMessage, setSignupmessage] = useState("")
 
     const initialState = {
@@ -17,14 +17,39 @@ const Signup = () => {
 
     const onSubmit = (formData) => {
         console.log(formData)
+        //compare passwords if they match
+        if(formData.password !== formData.confirmPassword){
+            setSignupmessage("Passwords do not match")
+            setTimeout(() => {
+                setSignupmessage("")
+            }, 5000);
+            return
+        }
+
         userService.signUp(formData)
         .then(response => {
+            
             console.log(response)
-            setSignupmessage(response.message)
+
+            const timeoutRedirect = setTimeout(()=>{
+                navigate('/login')
+            }, 5000)
+
+            setSignupmessage(`${response.message}. Taking you to login page in 5 seconds`)
+
+            //navigate to login page after 5 seconds
+
+            return () =>{
+                clearTimeout(timeoutRedirect)
+            };
         })
+
         .catch(err => {
             console.log(err.response.data.message)
             setSignupmessage(err.response.data.message)
+            setTimeout(() => {
+                setSignupmessage("")
+            }, 5000);
         })
     }
 
@@ -38,7 +63,14 @@ const Signup = () => {
                         <img src={logo} alt="" />
                     </div>
 
-                    {signupMessage && <div className={styles.errorDiv}><h3>{signupMessage}</h3></div>}
+                    {signupMessage && 
+                        <div className={
+                            signupMessage.includes('successfully') ? styles.successDiv: styles.errorDiv
+                        }>
+                            <h3>{signupMessage}</h3>
+                        </div>
+                    }
+
                     <div className={styles.formHolder}>
                         <label htmlFor="email">Email Address</label>
                         <input 

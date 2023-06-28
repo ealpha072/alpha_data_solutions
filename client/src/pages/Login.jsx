@@ -8,7 +8,6 @@ import userService from "../services/user";
 const Login = () => {
     const [loginMessage, setLoginmessage] = useState("")
 
-
     const initialState = {
         email:"",
         password:"",
@@ -16,6 +15,7 @@ const Login = () => {
 
     const onSubmit = (formData) => {
         console.log(formData)
+
         userService.login(formData)
         .then(response => {
             console.log(response)
@@ -24,6 +24,10 @@ const Login = () => {
         .catch(err => {
             console.log(err.response.data.message)
             setLoginmessage(err.response.data.message)
+
+            setTimeout(() => {
+                setLoginmessage("")
+            }, 5000);
         })
     }
 
