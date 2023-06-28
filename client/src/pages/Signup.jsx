@@ -1,4 +1,4 @@
-//import { useState } from "react";
+import { useState } from "react";
 import styles from "../styles/Login.module.css"
 import logo from "../assets/logo.png"
 import { Link } from "react-router-dom";
@@ -6,6 +6,8 @@ import useForm from "../Hooks/Formhook";
 import userService from "../services/user";
 
 const Signup = () => {
+
+    const [signupMessage, setSignupmessage] = useState("")
 
     const initialState = {
         email:"",
@@ -16,6 +18,14 @@ const Signup = () => {
     const onSubmit = (formData) => {
         console.log(formData)
         userService.signUp(formData)
+        .then(response => {
+            console.log(response)
+            setSignupmessage(response.message)
+        })
+        .catch(err => {
+            console.log(err.response.data.message)
+            setSignupmessage(err.response.data.message)
+        })
     }
 
     const {formData, handleInputChange, handleSubmit} = useForm(initialState, onSubmit)
@@ -27,6 +37,8 @@ const Signup = () => {
                     <div className={styles.logoDiv}>
                         <img src={logo} alt="" />
                     </div>
+
+                    {signupMessage && <div className={styles.errorDiv}><h3>{signupMessage}</h3></div>}
                     <div className={styles.formHolder}>
                         <label htmlFor="email">Email Address</label>
                         <input 

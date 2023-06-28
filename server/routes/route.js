@@ -40,7 +40,7 @@ appRoute.post('/login', async (req, res, next) => {
         let passwordMatch = findUser === null ? false : await bcrypt.compare(password, findUser.passwordHash)
 
         if(!(findUser && passwordMatch )){
-            res.status(400).json({message:"Invaliid email or password please try again"})
+            res.status(400).json({message:"Invalid email or password please try again"})
         }else{
             res.status(200).json({message: "Login successfull", user:findUser})
         }
