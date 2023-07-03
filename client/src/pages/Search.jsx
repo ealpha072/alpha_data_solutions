@@ -1,9 +1,40 @@
 //import { Link } from "react-router-dom"
+import axios from "axios"
+import { useEffect } from "react"
 import Header from "../components/Header"
 import logo from "../assets/logo.png"
 import styles from "../styles/Dashboard.module.css"
 
 const Search = () => {
+    useEffect(() => {
+        try{
+            const headers = {
+                "Content-Type": "application/json",
+                'Cache-Control': 'no-cache',
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+            }
+
+            const config = {
+                headers: headers
+            }
+
+            axios.get('https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2021/tradeflow/Exports/partner/WLD/product/040120', config)
+            .then(res => {
+                console.log(res)
+            }
+            ).catch(err => {
+                console.log(err)
+            }
+            )
+            
+
+        } catch(err) {
+            console.log(err)
+        }
+
+    })
+
     return (
         <div className={styles.mainContainer}>
             <Header logo={logo} styles={styles}/>

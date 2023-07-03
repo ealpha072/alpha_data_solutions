@@ -1,1 +1,1 @@
-GET http://wits.worldbank.org/API/V1/SDMX/V21/datasource/TRN/reporter/404/partner/all/product/730820/year/2020/datatype/reported?format=JSON
+get https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2021/tradeflow/Exports/partner/WLD/product/040120

@@ -1,4 +1,8 @@
 import express from "express"
+import axios from 'axios'
+import cheerio from 'cheerio'
+import htmlTabletojson from "html-table-to-json"
+import tableParser from 'cheerio-tableparser'
 import logger from "../utils/logger.js"
 import bcrypt from "bcrypt"
 import User from "../models/users.js"
@@ -59,6 +63,21 @@ appRoute.post('/login', async (req, res, next) => {
         next(error)
     }
 
+})
+
+appRoute.get('/uncomtrade', async(req, res, next) => {
+    const request = await axios.get('https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2021/tradeflow/Exports/partner/WLD/product/040120')
+    const resp = await request
+    const html = resp.data
+
+    const $ = cheerio.load(html);
+
+    // Find the table element using a selector
+    const tableElement = $('table');
+
+    // Extract the HTML content of the table
+    const tableHtml = tableElement.html()
+    res.send(tableHtml)
 })
 
 
