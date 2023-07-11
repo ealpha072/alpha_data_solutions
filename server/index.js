@@ -29,6 +29,7 @@ mongoose
 
 app.use(express.json())
 
+//middleware
 app.use(middleware.requestLogger)
 app.use("/user", appRoute)
 app.use(middleware.unknownEndpoint)

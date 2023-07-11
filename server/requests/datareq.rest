@@ -1,1 +1,2 @@
-get https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2021/tradeflow/Exports/partner/WLD/product/040120
+get https://wits.worldbank.org/CountryProfile/en/KEN
+
