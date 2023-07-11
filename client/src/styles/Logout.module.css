@@ -5,10 +5,19 @@
     align-items: center;
     justify-content: center;
 }
+
 .logout h1{
     color: #293745;
     font-size: 36px;
     font-weight: 800;
     margin-bottom: 6px;
     margin-right: 10px;
+}
+
+@media screen and (max-width:750px){
+    .logout h1{
+        text-align: center;
+        width: 50%;
+        font-size: 18px;
+    }
 }
