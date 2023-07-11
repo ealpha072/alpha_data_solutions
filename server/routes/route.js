@@ -66,16 +66,18 @@ appRoute.post('/login', async (req, res, next) => {
 })
 
 appRoute.post('/dataFetch', async(req, res, next) => {
-    const {rCode,year,flow,partner,cmd,} = req.body
-        //https://comtradeapi.un.org/data/v1/get/C/A/HS?reporterCode=${rCode}&period=${year}&flowCode=${flow}&partnerCode=${partner}&cmdCode=${cmd}
+    const {reporterCode, period, flowCode, partnerCode, cmdCode} = req.body
+
+    try {
+
         const request = await axios.get(`https://comtradeapi.un.org/public/v1/preview/C/A/HS?`,
             {
                 params: {
-                    reporterCode:404,
-                    period:2021,
-                    partnerCode:0,
-                    cmdCode:220410,
-                    flowCode:"M",
+                    reporterCode:parseInt(reporterCode),
+                    period:parseInt(period),
+                    partnerCode:parseInt(partnerCode),
+                    cmdCode:parseInt(cmdCode),
+                    flowCode:flowCode,
                     customsCode:"C00",
                     motCode:0,
                 },
@@ -85,11 +87,20 @@ appRoute.post('/dataFetch', async(req, res, next) => {
         })
 
         const resp = await request
-        console.log(resp.data)
-    
+
+        if(resp.data){
+            res.status(200).json({data: resp.data})
+        }else{
+            res.status(400).json({error: "Error fetching data, please try again"})
+        }
+    } catch (error) {
+        logger.error(error.message)
+        res.status(400).json(error)
+        next(error)
+    }
 })
 
-//'Ocp-Apim-Subscription-Key': API_KEY
+
 
 
 export default appRoute

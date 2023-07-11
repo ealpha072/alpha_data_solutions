@@ -10,6 +10,11 @@ const requestLogger = (req, res, next) => {
 }
 
 const errorHandler = (error, req, res, next) => {
+    /*if(error.name === "AxiosError"){
+        res.status(400).json(error)
+        logger.error(error.message)
+    }*/
+
     logger.error(error.message)
     next(error)
 }

@@ -1,6 +1,6 @@
-//import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 //import axios from "axios"
-//import { useEffect } from "react"
+import { useState } from "react"
 import Header from "../components/Header"
 import logo from "../assets/logo.png"
 import styles from "../styles/Dashboard.module.css"
@@ -8,6 +8,8 @@ import useForm from "../Hooks/Formhook"
 import userService from "../services/user"
 
 const Search = () => {
+    const navigate  = useNavigate()
+    const [fetchStatus, setFetchStatus] = useState("")
 
     const initialState = {
         reporterCode: "",
@@ -23,8 +25,23 @@ const Search = () => {
         userService.getData(formData)
         .then(response => {
             console.log(response)
-        }
-        )
+
+            if(response.error){
+                setFetchStatus(response.error)
+            }else{
+                setFetchStatus(response.message)
+                sessionStorage.setItem("data", JSON.stringify(response.data))
+                
+                //redirect after 3 seconds
+                setTimeout(() => {
+                    navigate("/searchquery_results")
+                }
+                , 3000)
+            }
+        }).catch(error => {
+            console.log(error)
+            setFetchStatus(error.message)
+        })
     }
 
     const {formData, handleInputChange, handleSubmit} = useForm(initialState, onSubmit)
@@ -57,7 +74,7 @@ const Search = () => {
                                         <div className={styles.inputGroup}>
                                             <label htmlFor="">Reporter</label>
                                             <input 
-                                                type="text" 
+                                                type="text"
                                                 name="reporterCode"
                                                 value={formData.reporterCode}
                                                 onChange={handleInputChange}
@@ -125,10 +142,10 @@ const Search = () => {
 
                     <div className={styles.searchBox}>
                         <div>
-                            <h3>SEARCH DATA STATUS</h3>
+                            <h3>REQUEST STATUS</h3>
                         </div>
                         <div>
-                            <h1>Searching...</h1>
+                            <h1>{fetchStatus}</h1>
                         </div>
                     </div>
                 </div>
