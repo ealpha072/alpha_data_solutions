@@ -54,7 +54,7 @@ const Search = () => {
             <div className={styles.homeContainer}>
                 <div className={styles.homeDiv}>
                     <div>
-                        <h1>Search Trade Data. Faster</h1>
+                        <h1>Find Trade Data. Faster</h1>
                         <p>
                            Search Kenya&apos;s Trade Data with our one stop data solution.
                         </p>
@@ -142,7 +142,7 @@ const Search = () => {
 
                     <div className={styles.searchBox}>
                         <div>
-                            <h3>REQUEST STATUS</h3>
+                            <h3>Request Status</h3>
                         </div>
                         <div>
                             <h1>{fetchStatus}</h1>

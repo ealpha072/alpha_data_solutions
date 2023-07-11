@@ -66,3 +66,9 @@ h4{
     border-radius: 3px;
     cursor: pointer;
 }
+
+@media screen and (max-width:750px){
+    .btnDiv{
+        width:100%;
+    }
+}

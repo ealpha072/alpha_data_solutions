@@ -38,6 +38,22 @@ const Home = () => {
                                 <h3>Past Results</h3>
                             </div>
                             <div>
+                                <p>Lorem ipsum dolor sit amet consectetur 
+                                    adipisicing elit. Laborum voluptatibus 
+                                    temporibus autem inventore deleniti sint 
+                                    eveniet nulla laudantium obcaecati soluta 
+                                    dolorum quasi, in magni ea nostrum pariatur 
+                                    dolore quia numquam!
+                                    
+                                </p>
+                                <p>Lorem ipsum dolor sit amet consectetur 
+                                    adipisicing elit. Laborum voluptatibus 
+                                    temporibus autem inventore deleniti sint 
+                                    eveniet nulla laudantium obcaecati soluta 
+                                    dolorum quasi, in magni ea nostrum pariatur 
+                                    dolore quia numquam!
+                                    
+                                </p>
 
                             </div>
                         </div>
@@ -47,12 +63,18 @@ const Home = () => {
                             <h3>Country Trade Profile</h3>
                         </div>
                         <div>
+                            <p>Lorem ipsum dolor sit amet consectetur 
+                                    adipisicing elit. Laborum voluptatibus 
+                                    temporibus autem inventore deleniti sint 
+                                    eveniet nulla laudantium obcaecati soluta 
+                                    dolorum quasi, in magni ea nostrum pariatur 
+                                    dolore quia numquam!
+                                    
+                            </p>
 
                         </div>
                     </div>
                 </div>
-
-                
             </div>
         </div>
     )

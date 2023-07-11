@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
+import CsvDownloadButton from 'react-json-to-csv'
 import styles from "../styles/Modal.module.css"
 
-const ModalOverlay = ({open, handleClick, style}) => {
+const ModalOverlay = ({open, handleClick, style, data}) => {
 
     return (
         <div className={styles.modalHolder}>
@@ -11,12 +12,13 @@ const ModalOverlay = ({open, handleClick, style}) => {
                     <div className={styles.headerContent}>
                         <label htmlFor="">Download Format:</label>
                         <select name="" id="">
-                            <option value="" selected defaultValue={"CSV"}>CSV</option>
+                            <option value="" defaultValue={"CSV"}>CSV</option>
                             <option value="">JSON</option>
                         </select>
                     </div>
                     <div>
-                        <button>DOWNLOAD</button>
+                        {/* <button>DOWNLOAD</button> */}
+                        <CsvDownloadButton data={data} />
                         <button onClick={handleClick} className={style}>CANCEL</button>
                     </div>
                 </div>

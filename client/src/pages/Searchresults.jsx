@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
+//import CsvDownloadButton from 'react-json-to-csv'
 import Header from "../components/Header"
 import logo from "../assets/logo.png"
 import styles from "../styles/Dashboard.module.css"
@@ -11,6 +12,11 @@ const Searchresults = () => {
     const openModal = () => {setisOpen(true)}
     const closeModal = () => {setisOpen(false)}
 
+    //get data from session storage
+    const data = JSON.parse(sessionStorage.getItem("data"))
+    const mainData = data.data.data[0]  //get the first object in the array
+
+    console.log(data)
 
     return (
         <div className={styles.mainContainer}>
@@ -37,7 +43,7 @@ const Searchresults = () => {
                                 <table>
                                     <thead>
                                         <tr>
-                                            <th>Reporter</th>
+                                            <th>Reporter Code</th>
                                             <th>Trade Flow</th>
                                             <th>Product Code</th>
                                             <th>Product Description</th>
@@ -53,9 +59,14 @@ const Searchresults = () => {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>Row 1, Cell 1</td>
-                                            <td>Row 1, Cell 2</td>
-                                            <td>Row 1, Cell 3</td>
+                                            <td>{mainData.reporterCode}</td>
+                                            <td>{mainData.flowCode}</td>
+                                            <td>{mainData.cmdCode}</td>
+                                            <td>{mainData.flowCode}</td>
+                                            <td>{mainData.period}</td>
+                                            <td>{mainData.partnerCode}</td>
+                                            <td>{mainData.primaryValue}</td>
+                                            <td>{mainData.netWgt}</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -69,7 +80,8 @@ const Searchresults = () => {
                 <ModalOverlay 
                     handleClick={closeModal} 
                     style={styles.close} 
-                    open={isOpen} 
+                    open={isOpen}
+                    data={mainData}
                 />
             }
         </div>

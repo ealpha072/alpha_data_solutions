@@ -74,10 +74,11 @@
 .past > div:first-child h3,
 .countryProfile > div:first-child h3,
 .searchBox h3{
-    color: #333333;
+    color: #293745;
     padding: 12px;
-    font-size: 14px;
-    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: capitalize;
 }
 
 /*SEARCH PAGE*/
@@ -204,4 +205,88 @@ tr > th:last-child{
 
 th > a{
     font-size: 1.5rem;
+}
+
+@media screen and (max-width:750px){
+    .homeContainer{
+        width: 90%;
+    }
+
+    .homeDiv h1{
+        margin-top: 20px;
+    }
+
+    .homeDiv h1{
+        font-size: 30px;
+    }
+
+    .homeDiv p{
+        font-size: 12px;
+    }
+
+    .searchDiv{
+        margin:30px auto;
+        flex-direction: column;
+    }
+
+    .pastResults{
+        height: auto;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .countryProfile{
+        height: auto;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .past{
+        height: auto;
+    }
+
+    .past p, .countryProfile p{
+        padding: 10px;
+    }
+
+    .past > div:first-child h3,
+    .countryProfile > div:first-child h3,
+    .searchBox h3{
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    /*SEARCH PAGE*/
+    .searchPage{
+        width: 100%;
+    }
+
+    .searchPage > div{
+        margin-bottom: 10px;
+    }
+
+    .searchBox{
+        width: 100%;
+    }
+
+    .rowOne{
+        margin-top: 20px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .rowOne > div{
+        width: 90%;
+        padding: 5px 5px;
+    }
+
+    .rowTwo{
+        width: 100%;
+    }
+
+    .rowTwo > div{
+        width: 90%;
+        padding: 0px 5px;
+        margin: auto;
+    }
 }
