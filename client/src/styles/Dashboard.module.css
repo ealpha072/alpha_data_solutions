@@ -289,4 +289,34 @@ th > a{
         padding: 0px 5px;
         margin: auto;
     }
+
+    .rowTwo button{
+        width: 40%;
+        margin: 20px auto;
+    }
+
+    /*RESULTS HOLDER*/
+    .resultsHolder{
+        overflow-x: auto;
+        border: none;
+        width: 100%;
+    }
+
+    .resultsHolder h1{
+        font-size: 12px;
+    }
+
+    .resultsHolder table{
+        padding: 2px;
+        width: 100%;
+    }
+
+    th,
+    td{
+        padding: 4px;
+    }
+
+    th > a{
+        font-size: 0.8rem;
+    }
 }

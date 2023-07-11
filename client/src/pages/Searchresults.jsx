@@ -34,7 +34,7 @@ const Searchresults = () => {
                     <div className={styles.searchPage}>
                         <div className={styles.searchBox}>
                             <div>
-                                <h3>SEARCH DATA RESULTS</h3>
+                                <h3>Search Data Results</h3>
                             </div>
                             <div className={styles.resultsHolder}>
                                 <h1>Kenya trade imports in 209 totalled </h1>
