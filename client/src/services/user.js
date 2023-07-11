@@ -14,9 +14,9 @@ const login = async (data) => {
 }
 
 const getData = async (data) => {
-    const request = await axios.get(`${baseUrl}/login`, data)
+    const request = await axios.post(`${baseUrl}/dataFetch`, data)
     const resp = await request
-    console.log(resp)
+    return resp
 }
 
 const userService = {signUp, login, getData}

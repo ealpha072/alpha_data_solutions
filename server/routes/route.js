@@ -65,10 +65,31 @@ appRoute.post('/login', async (req, res, next) => {
 
 })
 
-appRoute.get('/uncomtrade', async(req, res, next) => {
-    const request = await axios.get('https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2021/tradeflow/Exports/partner/WLD/product/040120')
-    const resp = await request
+appRoute.post('/dataFetch', async(req, res, next) => {
+    const {rCode,year,flow,partner,cmd,} = req.body
+        //https://comtradeapi.un.org/data/v1/get/C/A/HS?reporterCode=${rCode}&period=${year}&flowCode=${flow}&partnerCode=${partner}&cmdCode=${cmd}
+        const request = await axios.get(`https://comtradeapi.un.org/public/v1/preview/C/A/HS?`,
+            {
+                params: {
+                    reporterCode:404,
+                    period:2021,
+                    partnerCode:0,
+                    cmdCode:220410,
+                    flowCode:"M",
+                    customsCode:"C00",
+                    motCode:0,
+                },
+                headers: {
+                    'Cache-Control': 'no-cache'
+                }
+        })
+
+        const resp = await request
+        console.log(resp.data)
+    
 })
+
+//'Ocp-Apim-Subscription-Key': API_KEY
 
 
 export default appRoute

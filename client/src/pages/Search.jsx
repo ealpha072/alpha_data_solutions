@@ -4,8 +4,8 @@
 import Header from "../components/Header"
 import logo from "../assets/logo.png"
 import styles from "../styles/Dashboard.module.css"
-//import userService from "../services/user"
 import useForm from "../Hooks/Formhook"
+import userService from "../services/user"
 
 const Search = () => {
 
@@ -19,6 +19,12 @@ const Search = () => {
 
     const onSubmit = (formData) => {
         console.log(formData)
+
+        userService.getData(formData)
+        .then(response => {
+            console.log(response)
+        }
+        )
     }
 
     const {formData, handleInputChange, handleSubmit} = useForm(initialState, onSubmit)
