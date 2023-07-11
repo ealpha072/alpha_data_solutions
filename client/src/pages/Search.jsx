@@ -1,39 +1,28 @@
 //import { Link } from "react-router-dom"
-import axios from "axios"
-import { useEffect } from "react"
+//import axios from "axios"
+//import { useEffect } from "react"
 import Header from "../components/Header"
 import logo from "../assets/logo.png"
 import styles from "../styles/Dashboard.module.css"
+//import userService from "../services/user"
+import useForm from "../Hooks/Formhook"
 
 const Search = () => {
-    useEffect(() => {
-        try{
-            const headers = {
-                "Content-Type": "application/json",
-                'Cache-Control': 'no-cache',
-                "Access-Control-Allow-Origin": "*",
-                "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-            }
 
-            const config = {
-                headers: headers
-            }
+    const initialState = {
+        reporterCode: "",
+        period: "",
+        flowCode: "",
+        partnerCode: "",
+        cmdCode: "",
+    }
 
-            axios.get('https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2021/tradeflow/Exports/partner/WLD/product/040120', config)
-            .then(res => {
-                console.log(res)
-            }
-            ).catch(err => {
-                console.log(err)
-            }
-            )
-            
+    const onSubmit = (formData) => {
+        console.log(formData)
+    }
 
-        } catch(err) {
-            console.log(err)
-        }
+    const {formData, handleInputChange, handleSubmit} = useForm(initialState, onSubmit)
 
-    })
 
     return (
         <div className={styles.mainContainer}>
@@ -50,7 +39,7 @@ const Search = () => {
                 </div>
 
                 <div className={styles.searchPage}>
-                    <form>
+                    <form action="" method="" onSubmit={handleSubmit}>
                         <div className={styles.searchBox}>
                             <div>
                                 <h3>SEARCH DATA</h3>
@@ -61,37 +50,49 @@ const Search = () => {
                                     <div className="row-item">
                                         <div className={styles.inputGroup}>
                                             <label htmlFor="">Reporter</label>
-                                            <select name="" id="">
-                                                <option value="" selected> Kenya </option>
-                                            </select>
+                                            <input 
+                                                type="text" 
+                                                name="reporterCode"
+                                                value={formData.reporterCode}
+                                                onChange={handleInputChange}
+
+                                            />
                                         </div>
                                     </div>
                                     <div className="row-item">
                                         <div className={styles.inputGroup}>
                                             <label htmlFor="">Year</label>
-                                            <select name="" id="">
-                                                <option value="" selected> Kenya </option>
-                                            </select>
+                                            <input 
+                                                type="text" 
+                                                name="period"
+                                                value={formData.period}
+                                                onChange={handleInputChange}
+                                            />
                                         </div>
                                     </div>
                                     <div className="row-item">
                                         <div className={styles.inputGroup}>
                                             <label htmlFor="">Trade Flow</label>
-                                            <select name="" id="">
-                                                <option value="" selected> Kenya </option>
-                                            </select>
+                                            <input 
+                                                type="text" 
+                                                name="flowCode"
+                                                value={formData.flowCode}
+                                                onChange={handleInputChange}
+                                            />
                                         </div>
                                     </div>
-                                    
                                 </div>
 
                                 {/* SECOND ROW */}
                                 <div className={styles.rowTwo}>
                                     <div className={styles.inputGroup}>
                                         <label htmlFor="">Partner</label>
-                                        <select name="" id="">
-                                            <option value="" selected> Kenya </option>
-                                        </select>
+                                        <input 
+                                            type="text" 
+                                            name="partnerCode"
+                                            value={formData.partnerCode}
+                                            onChange={handleInputChange}
+                                        />
                                     </div>
                                 </div>
 
@@ -99,9 +100,12 @@ const Search = () => {
                                 <div className={styles.rowTwo}>
                                     <div className={styles.inputGroup}>
                                         <label htmlFor="">HS CODE</label>
-                                        <select name="" id="">
-                                            <option value="" selected> Kenya </option>
-                                        </select>
+                                        <input 
+                                            type="text" 
+                                            name="cmdCode"
+                                            value={formData.cmdCode}  
+                                            onChange={handleInputChange}
+                                        />
                                     </div>
                                 </div>
 

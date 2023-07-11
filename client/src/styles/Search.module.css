@@ -28,3 +28,10 @@
     color: var(--paragColor);
     text-align: center;
 }
+
+
+/*form input*/
+
+.rowTwo input{
+    padding: 20px;
+}

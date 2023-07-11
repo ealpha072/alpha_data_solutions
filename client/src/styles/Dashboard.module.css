@@ -146,6 +146,15 @@
     color: #ffff;
 }
 
+.rowTwo input, .rowOne input{
+    padding: 10px;
+    outline: none;
+    border: 1px solid #c2c8d0;
+    border-radius: 6px;
+    font-size: 12px;
+    width: 70%;
+}
+
 .inputGroup{
     display: flex;
     align-items: center;
