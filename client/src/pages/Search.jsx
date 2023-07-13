@@ -20,6 +20,7 @@ const Search = () => {
     }
 
     const onSubmit = (formData) => {
+        //clean formData
         console.log(formData)
 
         userService.getData(formData)
@@ -39,8 +40,8 @@ const Search = () => {
                 , 3000)
             }
         }).catch(error => {
-            console.log(error)
-            setFetchStatus(error.message)
+            console.log(error.response.data.error)
+            setFetchStatus(error.response.data.error)
         })
     }
 

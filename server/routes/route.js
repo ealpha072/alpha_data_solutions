@@ -71,18 +71,20 @@ appRoute.post('/dataFetch', async(req, res, next) => {
 
     let countryId = ''
 
-    
-    try {
-        countries.results.forEach(country => {
-            if(country.name === reporterCode){
-                countryId = country.id
-                console.log(countryId)
-            }else{
-                console.log("Not found")
-            }
-        })
+    countries.results.forEach(country => {
+        if(country.text === reporterCode){
+            countryId = country.id
+        }else{
+            console.log("Not found")
+            res.status(404).json({error:"Reporter not Found, please check and try again"})
+            process.exit()
+        }
+    })
 
-        /*const request = await axios.get(`https://comtradeapi.un.org/public/v1/preview/C/A/HS?`,
+    console.log(countryId)
+
+    try {
+        /**const request = await axios.get(`https://comtradeapi.un.org/public/v1/preview/C/A/HS?`,
             {
                 params: {
                     reporterCode:parseInt(reporterCode),
