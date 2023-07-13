@@ -102,8 +102,10 @@
     border-radius: 6px;
 }
 
-.searchBox > div:last-child h1{
-    padding: 10px;
+.searchBox > div:last-child h6{
+    font-size: 14px;
+    color: rgb(236, 18, 18);
+    padding: 20px;
 }
 
 .rowOne{

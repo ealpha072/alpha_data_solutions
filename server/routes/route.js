@@ -77,7 +77,6 @@ appRoute.post('/dataFetch', async(req, res, next) => {
         }else{
             console.log("Not found")
             res.status(404).json({error:"Reporter not Found, please check and try again"})
-            process.exit()
         }
     })
 

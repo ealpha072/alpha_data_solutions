@@ -146,7 +146,7 @@ const Search = () => {
                             <h3>Request Status</h3>
                         </div>
                         <div>
-                            <h1>{fetchStatus}</h1>
+                            <h6>{fetchStatus}</h6>
                         </div>
                     </div>
                 </div>
