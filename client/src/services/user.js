@@ -1,6 +1,7 @@
 import axios from "axios"
-//const baseUrl = "http://localhost:5000/user"
-const baseUrl = "https://alpha-data-solutions-backend-git-main-ealpha072.vercel.app/user"
+
+const baseUrl = "http://localhost:5000/user"
+//const baseUrl = "https://alpha-data-solutions-backend-git-main-ealpha072.vercel.app/user"
 
 const signUp = async (data) => {
     const request = axios.post(`${baseUrl}/signup`, data)

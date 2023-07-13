@@ -5,6 +5,7 @@ import axios from 'axios'
 import logger from "../utils/logger.js"
 import bcrypt from "bcrypt"
 import User from "../models/users.js"
+import countries from "../countries.js"
 import { randomBytes } from "crypto"
 
 const API_KEY = process.env.SECRET_KEY
@@ -68,9 +69,20 @@ appRoute.post('/login', async (req, res, next) => {
 appRoute.post('/dataFetch', async(req, res, next) => {
     const {reporterCode, period, flowCode, partnerCode, cmdCode} = req.body
 
-    try {
+    let countryId = ''
 
-        const request = await axios.get(`https://comtradeapi.un.org/public/v1/preview/C/A/HS?`,
+    
+    try {
+        countries.results.forEach(country => {
+            if(country.name === reporterCode){
+                countryId = country.id
+                console.log(countryId)
+            }else{
+                console.log("Not found")
+            }
+        })
+
+        /*const request = await axios.get(`https://comtradeapi.un.org/public/v1/preview/C/A/HS?`,
             {
                 params: {
                     reporterCode:parseInt(reporterCode),
@@ -92,15 +104,12 @@ appRoute.post('/dataFetch', async(req, res, next) => {
             res.status(200).json({data: resp.data})
         }else{
             res.status(400).json({error: "Error fetching data, please try again"})
-        }
+        }*/
     } catch (error) {
         logger.error(error.message)
         res.status(400).json(error)
         next(error)
     }
 })
-
-
-
 
 export default appRoute

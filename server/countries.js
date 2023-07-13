@@ -1,4 +1,4 @@
-{
+const countries = {
     "description":"countries",
     "results": [
         {
@@ -1031,3 +1031,5 @@
         }
     ]
 }
+
+export default countries
