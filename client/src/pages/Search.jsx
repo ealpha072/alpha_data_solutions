@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 //import axios from "axios"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Header from "../components/Header"
 import logo from "../assets/logo.png"
 import styles from "../styles/Dashboard.module.css"
@@ -9,6 +9,14 @@ import userService from "../services/user"
 
 const Search = () => {
     const navigate  = useNavigate()
+
+    useEffect(() => {
+        const token = sessionStorage.getItem("token")
+        if(!token){
+            navigate("/login")
+        }
+    }, [navigate])
+
     const [fetchStatus, setFetchStatus] = useState("")
 
     const initialState = {

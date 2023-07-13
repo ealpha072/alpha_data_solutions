@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { Link, useNavigate } from "react-router-dom"
 //import CsvDownloadButton from 'react-json-to-csv'
 import Header from "../components/Header"
 import logo from "../assets/logo.png"
@@ -7,6 +7,16 @@ import styles from "../styles/Dashboard.module.css"
 import ModalOverlay from "../components/Modal"
 
 const Searchresults = () => {
+
+    const navigate  = useNavigate()
+
+    useEffect(() => {
+        const token = sessionStorage.getItem("token")
+        if(!token){
+            navigate("/login")
+        }
+    }, [navigate])
+
     const [isOpen, setisOpen] = useState(false)
 
     const openModal = () => {setisOpen(true)}

@@ -8,6 +8,9 @@ const Logout = () => {
     const [countDown, setCountdown] = useState(5)
 
     useEffect(()=>{
+        sessionStorage.removeItem("token")
+        sessionStorage.removeItem("data")
+
         const timeoutRedirect = setTimeout(()=>{
             navigate('/')
         }, 5000)
