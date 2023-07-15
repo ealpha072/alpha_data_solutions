@@ -7,8 +7,7 @@ This web application allows users to access and analyze Kenya's trade data retri
   2. User Login: Registered users can log in using their username and password.
   3. Dashboard: Upon login, users are redirected to the dashboard, where they can access the application's features and functionalities.
   4. Search Trade Data: Users can search for specific trade data by entering keywords or filters. The system fetches the relevant data from the UN Comtrade API.
-  5. Data Filtering: Users can apply filters to the retrieved trade data based on criteria such as country, product category, or trade type.
-  6. Export Data: Users have the option to export the trade data in formats such as CSV, JSON, or Excel for further analysis or integration with other systems.
+  5. Export Data: Users have the option to export the trade data in formats such as CSV, JSON, or Excel for further analysis or integration with other systems.
 
 ## Prerequisites
 1. Node.js: Ensure that you have Node.js installed on your system. You can download it from https://nodejs.org.

@@ -41,18 +41,7 @@
     height: 300px;
 }
 
-.countryProfile{
-    width: 48%;
-    margin: auto;
-    border: 1px solid #D6DCE5;
-    height: 300px;
-}
 
-.countryProfile p{
-    font-size: 14px;
-    text-align: justify;
-    padding: 10px;
-}
 
 .button{
     margin: 20px auto;
@@ -64,6 +53,23 @@
     border-radius: 6px;
     font-size: 12px;
     font-weight: 700;
+}
+
+.countryProfile{
+    width: 48%;
+    margin: auto;
+    border: 1px solid #D6DCE5;
+    height: 300px;
+}
+
+.countryProfile p, .past p{
+    color: var(--paragColor);;
+    font-size: 14px;
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .past{
@@ -120,10 +126,15 @@
     margin: 10px auto;
 }
 
-.rowOne > div{
-    padding: 20px 10px;
+.rowOne > div:first-child{
+    padding: 20px 0px;
     width: 30%;
-    margin: auto;
+}
+
+.rowOne > div:not(:first-child){
+    padding: 20px 0px;
+    width: 30%;
+    margin:auto
 }
 
 .rowTwo{
@@ -159,9 +170,15 @@
     padding: 10px;
     outline: none;
     border: 1px solid #c2c8d0;
-    border-radius: 6px;
-    font-size: 12px;
+    border-radius:3px;
+    font-size: 1.4rem;
     width: 70%;
+    color: var(--paragColor);
+}
+
+.rowOne input:focus, 
+.rowTwo input:focus{
+    border-color: var(--buttonBlue);
 }
 
 .inputGroup{
