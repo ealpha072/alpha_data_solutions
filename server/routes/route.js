@@ -1,7 +1,6 @@
 import express from "express"
 import dotenv from "dotenv"
 dotenv.config({path: "./.env"})
-import axios from 'axios'
 import logger from "../utils/logger.js"
 import bcrypt from "bcrypt"
 import User from "../models/users.js"

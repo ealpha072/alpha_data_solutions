@@ -20,7 +20,7 @@ const useForm = (initialState, onSubmit) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         onSubmit(formData)
-        resetForm(initialState)
+        /*resetForm(initialState)*/
     }
 
     return{
