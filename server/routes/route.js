@@ -1,6 +1,8 @@
 import express from "express"
 import dotenv from "dotenv"
 dotenv.config({path: "./.env"})
+import axios from "axios"
+import cheerio from "cheerio"
 import logger from "../utils/logger.js"
 import bcrypt from "bcrypt"
 import User from "../models/users.js"
@@ -64,6 +66,27 @@ appRoute.post('/login', async (req, res, next) => {
     }
 
 })
+
+appRoute.get('/countryProfie', async(req, res, next) => {
+    try{
+        const request = await axios.get(`https://wits.worldbank.org/CountryProfile/en/KEN`)
+        const response = await request
+        const $ = cheerio.load(response.data)
+        const divTarget = $("#staticPageContent > div > div > div:nth-child(4) > section > div > div > div")
+        const scrapedData = divTarget.text();
+        
+        if(scrapedData && scrapedData.length > 1){
+            const dataTosend = scrapedData.trim()
+            res.status(200).json({message: dataTosend})
+        }else{
+            res.status(200).json({message: "Unable to find country profie, trying again"})
+        }
+    }catch(err){
+        console.log(err.message)
+        res.status(404).json(error)
+    }
+})
+
 
 appRoute.post('/dataFetch', async(req, res, next) => {
     const {reporterCode, period, flowCode, partnerCode, cmdCode} = req.body

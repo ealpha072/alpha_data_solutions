@@ -31,12 +31,21 @@ const Login = () => {
             }, 5000);
         })
         .catch(err => {
-            console.log(err.messsage)
-            setLoginmessage(`${err.message}. Unable to reach server. Try again later`)
+            if(err.response){
+                console.log(err.response.data.message)
+                setLoginmessage(`${err.response.data.message}. Try again`)
+                setTimeout(() => {
+                    setLoginmessage("")
+                }, 5000);
+                return
+            }else{
+                console.log(err.messsage)
+                setLoginmessage(`${err.message}. Unable to reach server. Try again later`)
 
-            setTimeout(() => {
-                setLoginmessage("")
-            }, 5000);
+                setTimeout(() => {
+                    setLoginmessage("")
+                }, 5000);
+            }
         })
     }
 

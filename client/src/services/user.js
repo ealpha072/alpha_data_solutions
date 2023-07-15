@@ -21,6 +21,12 @@ const getData = async (data) => {
     return resp
 }
 
-const userService = {signUp, login, getData}
+const getCountryProfile = async () => {
+    const request = await axios.get(`${baseUrl}/countryProfie`)
+    const response = await request
+    return response
+}
+
+const userService = {signUp, login, getData, getCountryProfile}
 
 export default userService

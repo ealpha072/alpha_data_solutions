@@ -1,17 +1,34 @@
-import {useEffect} from "react"
+import {useState,useEffect} from "react"
 import styles from "../styles/Dashboard.module.css"
 import logo from "../assets/logo.png"
 import {Link, useNavigate} from 'react-router-dom'
 import Header from "../components/Header"
+import userService from "../services/user"
 
 const Home = () => {
     const navigate = useNavigate()
+    const [countryProfile, setCountryProfile] = useState("Fetching Country Profile")
 
     useEffect(() => {
         const token = sessionStorage.getItem("token")
         if(!token){
             navigate("/login")
         }
+
+        userService.getCountryProfile()
+        .then(response => {
+            console.log(response.data.message)
+            if(response.data.message){
+                setCountryProfile(response.data.message)
+            }else{
+                setCountryProfile("No Country Profile Found")
+            }
+        })
+        .catch(err => {
+            console.log(err)
+        })
+
+
     }, [navigate])
 
     return (
@@ -44,15 +61,6 @@ const Home = () => {
                                     eveniet nulla laudantium obcaecati soluta 
                                     dolorum quasi, in magni ea nostrum pariatur 
                                     dolore quia numquam!
-                                    
-                                </p>
-                                <p>Lorem ipsum dolor sit amet consectetur 
-                                    adipisicing elit. Laborum voluptatibus 
-                                    temporibus autem inventore deleniti sint 
-                                    eveniet nulla laudantium obcaecati soluta 
-                                    dolorum quasi, in magni ea nostrum pariatur 
-                                    dolore quia numquam!
-                                    
                                 </p>
 
                             </div>
@@ -63,15 +71,7 @@ const Home = () => {
                             <h3>Country Trade Profile</h3>
                         </div>
                         <div>
-                            <p>Lorem ipsum dolor sit amet consectetur 
-                                    adipisicing elit. Laborum voluptatibus 
-                                    temporibus autem inventore deleniti sint 
-                                    eveniet nulla laudantium obcaecati soluta 
-                                    dolorum quasi, in magni ea nostrum pariatur 
-                                    dolore quia numquam!
-                                    
-                            </p>
-
+                            <p>{countryProfile}</p>
                         </div>
                     </div>
                 </div>
