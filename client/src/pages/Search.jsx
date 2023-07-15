@@ -48,8 +48,23 @@ const Search = () => {
                 , 3000)
             }
         }).catch(error => {
-            console.log(error.response.data.error)
-            setFetchStatus(error.response.data.error)
+            if(error.response){
+                console.log(error)
+                setFetchStatus(error.response.data.message)
+
+                setTimeout(() => {
+                    setFetchStatus("No data to fetch ...")
+                }
+                , 5000)
+            }else{
+                console.log(error)
+                setFetchStatus(error.message)
+
+                setTimeout(() => {
+                    setFetchStatus("No data to fetch ...")
+                }
+                , 5000)
+            }
         })
     }
 
@@ -85,6 +100,7 @@ const Search = () => {
                                             <input 
                                                 type="text"
                                                 name="reporterCode"
+                                                required
                                                 value={formData.reporterCode}
                                                 onChange={handleInputChange}
 

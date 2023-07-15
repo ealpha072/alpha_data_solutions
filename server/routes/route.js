@@ -98,41 +98,45 @@ appRoute.post('/dataFetch', async(req, res, next) => {
             countryId = country.id
         }else{
             console.log("Not found")
-            res.status(404).json({error:"Reporter not Found, please check and try again"})
+            //res.status(404).json({error:"Reporter not Found, please check and try again"})
         }
     })
 
-    console.log(countryId)
+    if (countryId){
 
-    try {
-        /**const request = await axios.get(`https://comtradeapi.un.org/public/v1/preview/C/A/HS?`,
-            {
-                params: {
-                    reporterCode:parseInt(reporterCode),
-                    period:parseInt(period),
-                    partnerCode:parseInt(partnerCode),
-                    cmdCode:parseInt(cmdCode),
-                    flowCode:flowCode,
-                    customsCode:"C00",
-                    motCode:0,
-                },
-                headers: {
-                    'Cache-Control': 'no-cache'
-                }
-        })
-
-        const resp = await request
-
-        if(resp.data){
-            res.status(200).json({data: resp.data})
-        }else{
-            res.status(400).json({error: "Error fetching data, please try again"})
-        }*/
-    } catch (error) {
-        logger.error(error.message)
-        res.status(400).json(error)
-        next(error)
+        try {
+            const request = await axios.get(`https://comtradeapi.un.org/public/v1/preview/C/A/HS?`,
+                {
+                    params: {
+                        reporterCode:parseInt(reporterCode),
+                        period:parseInt(period),
+                        partnerCode:parseInt(partnerCode),
+                        cmdCode:parseInt(cmdCode),
+                        flowCode:flowCode,
+                        customsCode:"C00",
+                        motCode:0,
+                    },
+                    headers: {
+                        'Cache-Control': 'no-cache'
+                    }
+            })
+    
+            const resp = await request
+    
+            if(resp.data){
+                res.status(200).json({data: resp.data})
+            }else{
+                res.status(400).json({error: "Error fetching data, please try again"})
+            }
+        } catch (error) {
+            logger.error(error.message)
+            res.status(400).json(error)
+            next(error)
+        }
+    }else{
+        res.status(404).json({error:"Reporter not Found, please check and try again"})
     }
+
 })
 
 export default appRoute
