@@ -31,8 +31,8 @@ const Login = () => {
             }, 5000);
         })
         .catch(err => {
-            console.log(err.response.data.message)
-            setLoginmessage(err.response.data.message)
+            console.log(err.messsage)
+            setLoginmessage(`${err.message}. Unable to reach server. Try again later`)
 
             setTimeout(() => {
                 setLoginmessage("")

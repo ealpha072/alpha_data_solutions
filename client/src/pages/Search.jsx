@@ -40,7 +40,7 @@ const Search = () => {
             }else{
                 setFetchStatus(response.message)
                 sessionStorage.setItem("data", JSON.stringify(response.data))
-                
+
                 //redirect after 3 seconds
                 setTimeout(() => {
                     navigate("/searchquery_results")

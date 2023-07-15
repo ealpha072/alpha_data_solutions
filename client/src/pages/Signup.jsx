@@ -4,6 +4,7 @@ import logo from "../assets/logo.png"
 import { Link, useNavigate } from "react-router-dom";
 import useForm from "../Hooks/Formhook";
 import userService from "../services/user";
+import validatePass from "../utilities/utilities";
 
 const Signup = () => {
     const navigate = useNavigate()
@@ -18,39 +19,37 @@ const Signup = () => {
     const onSubmit = (formData) => {
         console.log(formData)
         //compare passwords if they match
-        if(formData.password !== formData.confirmPassword){
-            setSignupmessage("Passwords do not match")
+        const passwordValidation = validatePass(formData.password, formData.confirmPassword)
+        if(passwordValidation !== "Password valid"){
+            setSignupmessage(passwordValidation)
             setTimeout(() => {
                 setSignupmessage("")
             }, 5000);
             return
+        }else{
+            userService.signUp(formData)
+            .then(response => {
+                console.log(response)
+    
+                const timeoutRedirect = setTimeout(()=>{
+                    navigate('/login')
+                }, 5000)
+    
+                setSignupmessage(`${response.message}. Taking you to login page in 5 seconds`)
+                //navigate to login page after 5 seconds
+                return () =>{
+                    clearTimeout(timeoutRedirect)
+                };
+            })
+            .catch(err => {
+                console.log(err.message)
+                setSignupmessage(`${err.message} Unable to reach server. Try again later`)
+                setTimeout(() => {
+                    setSignupmessage("")
+                }, 5000);
+            })
         }
 
-        userService.signUp(formData)
-        .then(response => {
-            
-            console.log(response)
-
-            const timeoutRedirect = setTimeout(()=>{
-                navigate('/login')
-            }, 5000)
-
-            setSignupmessage(`${response.message}. Taking you to login page in 5 seconds`)
-
-            //navigate to login page after 5 seconds
-
-            return () =>{
-                clearTimeout(timeoutRedirect)
-            };
-        })
-
-        .catch(err => {
-            console.log(err.response.data.message)
-            setSignupmessage(err.response.data.message)
-            setTimeout(() => {
-                setSignupmessage("")
-            }, 5000);
-        })
     }
 
     const {formData, handleInputChange, handleSubmit} = useForm(initialState, onSubmit)
