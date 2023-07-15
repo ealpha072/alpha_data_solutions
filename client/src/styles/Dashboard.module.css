@@ -48,6 +48,12 @@
     height: 300px;
 }
 
+.countryProfile p{
+    font-size: 14px;
+    text-align: justify;
+    padding: 10px;
+}
+
 .button{
     margin: 20px auto;
 }
@@ -248,6 +254,8 @@ th > a{
     }
 
     .past p, .countryProfile p{
+        text-align: justify;
+        font-size: 12px;
         padding: 10px;
     }
 

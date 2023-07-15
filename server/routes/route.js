@@ -83,7 +83,7 @@ appRoute.get('/countryProfie', async(req, res, next) => {
         }
     }catch(err){
         console.log(err.message)
-        res.status(404).json(error)
+        res.status(404).json(err)
     }
 })
 

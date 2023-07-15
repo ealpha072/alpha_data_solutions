@@ -7,26 +7,35 @@ import userService from "../services/user"
 
 const Home = () => {
     const navigate = useNavigate()
-    const [countryProfile, setCountryProfile] = useState("Fetching Country Profile")
+    const [countryProfile, setCountryProfile] = useState("Fetching Country Profile ...")
 
     useEffect(() => {
         const token = sessionStorage.getItem("token")
+
         if(!token){
             navigate("/login")
         }
 
-        userService.getCountryProfile()
-        .then(response => {
-            console.log(response.data.message)
-            if(response.data.message){
-                setCountryProfile(response.data.message)
-            }else{
-                setCountryProfile("No Country Profile Found")
-            }
-        })
-        .catch(err => {
-            console.log(err)
-        })
+        if(sessionStorage.getItem("countryProfile")){
+            setCountryProfile(sessionStorage.getItem("countryProfile"))
+            return
+        }else{
+            userService.getCountryProfile()
+            .then(response => {
+                //console.log(response.data.message)
+                if(response.data.message){
+                    setCountryProfile(response.data.message)
+                    //save data to session storage
+                    sessionStorage.setItem("countryProfile", response.data.message)
+                }else{
+                    setCountryProfile("No Country Profile Found")
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        }
+
 
 
     }, [navigate])
@@ -68,7 +77,7 @@ const Home = () => {
                     </div>
                     <div className={styles.countryProfile}>
                         <div>
-                            <h3>Country Trade Profile</h3>
+                            <h3>Country Trade Profile - Most Recent Values</h3>
                         </div>
                         <div>
                             <p>{countryProfile}</p>
