@@ -17,7 +17,7 @@ const Search = () => {
         }
     }, [navigate])
 
-    const [fetchStatus, setFetchStatus] = useState("")
+    const [fetchStatus, setFetchStatus] = useState("No data to fetch ...")
 
     const initialState = {
         reporterCode: "",
@@ -90,6 +90,7 @@ const Search = () => {
 
                                             />
                                         </div>
+                                        <p>Only one reporter allowed</p>
                                     </div>
                                     <div className="row-item">
                                         <div className={styles.inputGroup}>
@@ -101,6 +102,7 @@ const Search = () => {
                                                 onChange={handleInputChange}
                                             />
                                         </div>
+                                        <p>For multiple, separate with comma</p>
                                     </div>
                                     <div className="row-item">
                                         <div className={styles.inputGroup}>
@@ -112,6 +114,7 @@ const Search = () => {
                                                 onChange={handleInputChange}
                                             />
                                         </div>
+                                        <p>M for Imports, X for exports</p>
                                     </div>
                                 </div>
 
@@ -126,6 +129,7 @@ const Search = () => {
                                             onChange={handleInputChange}
                                         />
                                     </div>
+                                    <p>Partners; Multiple partners separated by comas</p>
                                 </div>
 
                                 {/* THIRD ROW */}
@@ -139,6 +143,7 @@ const Search = () => {
                                             onChange={handleInputChange}
                                         />
                                     </div>
+                                    <p>Six digit HSCODE; For multiple, separate with comma</p>
                                 </div>
 
                                 <div className={styles.rowTwo}>
@@ -150,9 +155,6 @@ const Search = () => {
                     </form>
 
                     <div className={styles.searchBox}>
-                        <div>
-                            <h3>Request Status</h3>
-                        </div>
                         <div>
                             <h6>{fetchStatus}</h6>
                         </div>

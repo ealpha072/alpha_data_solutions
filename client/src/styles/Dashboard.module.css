@@ -11,12 +11,12 @@
 
 .homeDiv{
     text-align: center;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .homeDiv h1{
     color: #293745;
-    font-size: 48px;
+    font-size: 44px;
     font-weight: 800;
     margin-bottom: 6px;
     text-align: center;
@@ -40,8 +40,6 @@
     margin: auto;
     height: 300px;
 }
-
-
 
 .button{
     margin: 20px auto;
@@ -116,8 +114,9 @@
 
 .searchBox > div:last-child h6{
     font-size: 14px;
-    color: rgb(236, 18, 18);
+    color: rgb(4, 83, 43);
     padding: 10px;
+    font-style: italic;
 }
 
 .rowOne{
@@ -137,11 +136,28 @@
     margin:auto
 }
 
+.rowOne p{
+    width: 70%;
+    color: var(--buttonBlue);
+    margin-left: 30%;
+    padding-top: 10px;
+    font-style: italic;
+    font-weight: 700;
+}
+
 .rowTwo{
-    display: flex;
     width: 90%;
     margin: 10px auto;
     justify-content: start;
+}
+
+.rowTwo p{
+    color: var(--buttonBlue);
+    width: 70%;
+    margin-left: 12%;
+    padding-top: 10px;
+    font-style: italic;
+    font-weight: 700;
 }
 
 .rowTwo > div{
@@ -254,6 +270,18 @@ th > a{
         flex-direction: column;
     }
 
+    /*ROWSS*/
+    .rowOne > div:first-child, 
+    .rowOne > div:not(:first-child){
+        padding: 10px 0px;
+        width: 90%;
+        margin: auto;
+    }
+
+    .rowTwo p{
+        margin-left: 32%;
+    }
+
     .pastResults{
         height: auto;
         width: 100%;
@@ -318,8 +346,9 @@ th > a{
     }
 
     .rowTwo button{
-        width: 40%;
-        margin: 20px auto;
+        width: 30%;
+        margin-left: 30%;
+        padding: 5px;
     }
 
     /*RESULTS HOLDER*/

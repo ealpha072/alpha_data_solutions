@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <nav>
             <div>
-                <img src={logo} alt="" width={"55px"} />
+                <img src={logo} alt="" width={"40px"} />
             </div>
 
             <div className={styles.actions}>
