@@ -44,3 +44,21 @@ a:hover{
     color: var(--colorTwo);
     font-size: 36px;
 }
+
+@media screen and (max-width:750px){
+    nav > div{
+        width: 95%;
+    }
+
+    .actions{
+        display: none;
+    }
+
+    .logo{
+        width: 100%;
+    }
+
+    .logo h1{
+        font-size: 24px;
+    }
+}

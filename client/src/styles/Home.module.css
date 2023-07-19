@@ -180,6 +180,53 @@ h4{
 }
 
 @media screen and (max-width:750px){
+    .backgroundDiv{
+        height: 800px;
+    }
+
+    .blurOverlay{
+        height: 95%;
+        flex-direction: column-reverse;
+    }
+
+    .blurOverlay > div{
+        display: flex;
+        flex-direction: column;
+        width:95%;
+    }
+
+    .blurOverlay > div:first-child{
+        padding: 20px 10px;
+        margin-top: 20px;
+    }
+
+    .blurOverlay > div:last-child{
+        padding: 20px;
+    }
+
+    .blurOverlay > div h1{
+        font-size: 44px;
+    }
+
+    .blurOverlay > div p{
+        font-size: 14px;
+    }
+
+    .imageContainer{
+        height: 400px;
+    }
+
+    .imageContainer img{
+        height: 400px;
+        width: 80%;
+        margin: auto;
+    }
+
+    .bannerBtns{
+        width: 95%;
+    }
+
+
     .btnDiv{
         width:100%;
     }
