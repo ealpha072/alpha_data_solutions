@@ -32,8 +32,13 @@
     cursor: pointer;
 }
 
+.bannerDiv{
+    background-image: url("../assets/banner_one.webp");
+    height: 400px;
+}
+
 h2{
-    color: #293745;
+    color: #ffff;
     font-size: 36px;
     font-weight: 800;
     text-align: center;
@@ -65,6 +70,113 @@ h4{
     font-size: 1.2rem;
     border-radius: 3px;
     cursor: pointer;
+}
+
+/*BANNER*/
+.backgroundDiv{
+    position: relative;
+    background-image: url("../assets/banner_one.webp");
+    height: 650px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*filter: brightness(0.7) blur(1px)*/
+}
+
+.blurOverlay{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2px); /* Apply a blur effect to the overlay */
+}
+
+.blurOverlay > div{
+    width: 50%;
+    padding: 50px 100px;
+}
+
+.blurOverlay > div p, h1, h6{
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
+
+.blurOverlay h6{
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 0em 0em 2em 0em;
+}
+
+.blurOverlay > div h1{
+    font-size: 62px;
+    line-height: 1.06em;
+    letter-spacing: 0px;
+    margin: 0em 0em 0.25em 0em;
+}
+
+.blurOverlay > div p{
+    font-size: 20px;
+    line-height: 32px;
+    margin: 0em 0em 2em 0em;
+}
+
+/*BANNER BUTTONS*/
+.bannerBtns{
+   width: 75%;
+   display: flex;
+   justify-content: space-between;
+}
+
+.bannerBtns a{
+    font-size: 16px;
+    font-weight: 700;
+    width:45%;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 30px;
+    letter-spacing: 1.5px;
+}
+
+.bannerBtns a:first-child{
+    background-color: #001F3F;
+}
+
+.bannerBtns a:first-child:hover{
+    background-color: #ffff;
+    color:#001F3F;
+    border: 1px solid #001F3F;
+}
+
+.bannerBtns a:last-child{
+    background-color: #ffff;
+    color: #001F3F;
+}
+
+.bannerBtns a:last-child:hover{
+    background-color: #001F3F;
+    color: #ffff;
+}
+
+.imageContainer{
+    padding-top: 50px;
+    height: 550px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.imageContainer img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%; /* Make the image fill the container */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+    padding-top: 50px;
+    border-radius: 50%;
+    transform: scale(1.2);
 }
 
 @media screen and (max-width:750px){
