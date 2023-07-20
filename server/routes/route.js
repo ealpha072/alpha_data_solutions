@@ -79,7 +79,15 @@ appRoute.get('/countryProfie', async(req, res, next) => {
             const dataTosend = scrapedData.trim()
             res.status(200).json({message: dataTosend})
         }else{
-            res.status(200).json({message: "Unable to find country profie, trying again"})
+            const mockData = `Kenya had a total export of 6,023,441.81 in thousands of US$ and 
+            total imports of 15,405,370.57 in thousands of US$ leading to a negative trade balance of 
+            -9,381,928.76 in thousands of US$ The Effectively Applied Tariff Weighted Average (customs duty) 
+            for Kenya is 9.32% and the Most Favored Nation (MFN) Weighted Average tariff is 12.02%.
+            The trade growth is -3.94% compared to a world growth of -3.91%. GDP of Kenya is 98,842,939,649.11 
+            in current US$. Kenya services export is in BoP, current US$ and services import is in Bop, 
+            current US$.Kenya exports of goods and services as percentage of GDP is 11.26% and imports of 
+            goods and services as percentage of GDP is 20.16%.`
+            res.status(200).json({message: mockData})
         }
     }catch(err){
         console.log(err.message)
