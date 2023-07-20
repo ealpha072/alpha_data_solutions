@@ -1,8 +1,9 @@
 //import { Link } from "react-router-dom"
 import logo from "../assets/logo.png"
 import styles from "../styles/Header.module.css"
+/* eslint-disable react/prop-types */
 
-const Header = () => {
+const Header = ({status}) => {
     return (
         <header>
             <nav>
@@ -13,10 +14,11 @@ const Header = () => {
                     </div>
                     <div className={styles.actions}>
                         <a href="#">HOME</a>
-                        <a href="#">FEATURES</a>
+                        <a href={`/${status}`}>{status}</a>
                     </div>
                 </div>
             </nav>
+            <hr />
     </header>
   );
 }

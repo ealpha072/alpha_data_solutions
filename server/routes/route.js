@@ -74,7 +74,7 @@ appRoute.get('/countryProfie', async(req, res, next) => {
         const $ = cheerio.load(response.data)
         const divTarget = $("#staticPageContent > div > div > div:nth-child(4) > section > div > div > div")
         const scrapedData = divTarget.text();
-        
+
         if(scrapedData && scrapedData.length > 1){
             const dataTosend = scrapedData.trim()
             res.status(200).json({message: dataTosend})

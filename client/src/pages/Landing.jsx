@@ -10,7 +10,7 @@ const Landing = () => {
     return (
         
             <div className='part_one'>
-                <Header />
+                <Header status={"FEATURES"}/>
                 <div className={styles.backgroundDiv}>
                     <div className={styles.blurOverlay}>
                         <div>

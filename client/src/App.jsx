@@ -21,6 +21,7 @@ const App = () => {
           <Route path='/search' element={<Search />}/>
           <Route path='/searchquery_results' element={<Searchresults />}/>
           <Route path='/logout' element={<Logout />} />
+          <Route path='/features' element={<Landing />} />
         </Routes>
       </Router>
     </div>

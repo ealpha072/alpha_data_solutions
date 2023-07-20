@@ -1,6 +1,6 @@
 import {useState,useEffect} from "react"
 import styles from "../styles/Dashboard.module.css"
-import logo from "../assets/logo.png"
+//import logo from "../assets/logo.png"
 import {Link, useNavigate} from 'react-router-dom'
 import Header from "../components/Header"
 import userService from "../services/user"
@@ -42,7 +42,7 @@ const Home = () => {
 
     return (
         <div className={styles.mainContainer}>
-            <Header  logo={logo} styles={styles} />
+            <Header status={"Logout"}/> 
 
             <div className={styles.homeContainer}>
                 <div className={styles.homeDiv}>
