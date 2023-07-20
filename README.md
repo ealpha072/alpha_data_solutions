@@ -2,6 +2,8 @@
 
 This web application allows users to access and analyze Kenya's trade data retrieved from the UN Comtrade API. Users can register for an account, log in, search for specific trade information, apply filters, and export the data in various formats.
 
+>> https://alpha-data-solutions-frontend.vercel.app/
+
 ## Features
   1. User Registration: Users can create an account by providing their username, email, and password.
   2. User Login: Registered users can log in using their username and password.
