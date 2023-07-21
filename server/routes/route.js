@@ -51,7 +51,9 @@ appRoute.post('/login', async (req, res, next) => {
     //look for user
     try {
         const findUser = await User.findOne({email: email})
-        let passwordMatch = findUser === null ? false : await bcrypt.compare(password, findUser.passwordHash)
+        let passwordMatch = findUser === null ? 
+        false : 
+        await bcrypt.compare(password, findUser.passwordHash)
 
         if(!(findUser && passwordMatch )){
             res.status(400).json({message:"Invalid email or password please try again"})
@@ -98,9 +100,7 @@ appRoute.get('/countryProfie', async(req, res, next) => {
 
 appRoute.post('/dataFetch', async(req, res, next) => {
     const {reporterCode, period, flowCode, partnerCode, cmdCode} = req.body
-
     let countryId = ''
-
     countries.results.forEach(country => {
         if(country.text === reporterCode){
             countryId = country.id
