@@ -8,6 +8,7 @@ import bcrypt from "bcrypt"
 import User from "../models/users.js"
 import countries from "../countries.js"
 import { randomBytes } from "crypto"
+import { type } from "os"
 
 const API_KEY = process.env.SECRET_KEY
 const appRoute = express.Router()
@@ -100,7 +101,10 @@ appRoute.get('/countryProfie', async(req, res, next) => {
 
 appRoute.post('/dataFetch', async(req, res, next) => {
     const {reporterCode, period, flowCode, partnerCode, cmdCode} = req.body
+    console.log(typeof(reporterCode))
+
     let countryId = ''
+
     countries.results.forEach(country => {
         if(country.text === reporterCode){
             countryId = country.id
@@ -109,14 +113,14 @@ appRoute.post('/dataFetch', async(req, res, next) => {
             //res.status(404).json({error:"Reporter not Found, please check and try again"})
         }
     })
+    console.log(typeof(countryId))
 
     if (countryId){
-
         try {
             const request = await axios.get(`https://comtradeapi.un.org/public/v1/preview/C/A/HS?`,
                 {
                     params: {
-                        reporterCode:parseInt(reporterCode),
+                        reporterCode:parseInt(countryId),
                         period:parseInt(period),
                         partnerCode:parseInt(partnerCode),
                         cmdCode:parseInt(cmdCode),
@@ -128,7 +132,7 @@ appRoute.post('/dataFetch', async(req, res, next) => {
                         'Cache-Control': 'no-cache'
                     }
             })
-    
+
             const resp = await request
     
             if(resp.data){
@@ -137,7 +141,8 @@ appRoute.post('/dataFetch', async(req, res, next) => {
                 res.status(400).json({error: "Error fetching data, please try again"})
             }
         } catch (error) {
-            logger.error(error.message)
+            console.error(error)
+            //logger.error(error.message)
             res.status(400).json(error)
             next(error)
         }

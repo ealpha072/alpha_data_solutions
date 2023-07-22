@@ -8,28 +8,27 @@ import Header from "../components/Header"
 const Landing = () => {
 
     return (
-        
-            <div className='part_one'>
-                <Header status={"FEATURES"}/>
-                <div className={styles.backgroundDiv}>
-                    <div className={styles.blurOverlay}>
-                        <div>
-                            <h6>KENYA TRADE DATA</h6>
-                            <h1>Access Kenya Trade Data faster.</h1>
-                            <p>
-                                Alpha Data Solutions transforms we access trade data 
-                            </p>
-                            <div className={styles.bannerBtns}>
-                                <Link to={"/login"}>Login</Link>
-                                <Link to={"signup"}>Sign up</Link>
-                            </div>
-                        </div>
-                        <div className={styles.imageContainer}>
-                            <img src={bannerTwo} alt="" />
+        <div className='part_one'>
+            <Header status={"FEATURES"}/>
+            <div className={styles.backgroundDiv}>
+                <div className={styles.blurOverlay}>
+                    <div>
+                        <h6>KENYA TRADE DATA</h6>
+                        <h1>Access Kenya Trade Data faster.</h1>
+                        <p>
+                            Alpha Data Solutions transforms we access trade data 
+                        </p>
+                        <div className={styles.bannerBtns}>
+                            <Link to={"/login"}>Login</Link>
+                            <Link to={"signup"}>Sign up</Link>
                         </div>
                     </div>
+                    <div className={styles.imageContainer}>
+                        <img src={bannerTwo} alt="" />
+                    </div>
+                    </div>
                 </div>
-            </div>
+        </div>
     )
 }
 
