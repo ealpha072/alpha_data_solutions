@@ -47,7 +47,7 @@ const Searchresults = () => {
                                 <h3>Search Data Results</h3>
                             </div>
                             <div className={styles.resultsHolder}>
-                                <h1>Kenya trade imports in 209 totalled </h1>
+                                {/* <h1>Kenya trade imports in 209 totalled </h1> */}
 
                                 {/* Download icon */}
                                 <table>
@@ -69,14 +69,15 @@ const Searchresults = () => {
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{mainData.reporterCode}</td>
-                                            <td>{mainData.flowCode}</td>
+                                            <td>{mainData.reporterDesc}</td>
+                                            <td>{mainData.flowDesc}</td>
                                             <td>{mainData.cmdCode}</td>
-                                            <td>{mainData.flowCode}</td>
+                                            <td>{mainData.cmdDesc}</td>
                                             <td>{mainData.period}</td>
-                                            <td>{mainData.partnerCode}</td>
+                                            <td>{mainData.partnerDesc}</td>
                                             <td>{mainData.primaryValue}</td>
                                             <td>{mainData.netWgt}</td>
+                                            <td>{mainData.qtyUnitAbbr}</td>
                                         </tr>
                                     </tbody>
                                 </table>

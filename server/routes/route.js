@@ -127,6 +127,7 @@ appRoute.post('/dataFetch', async(req, res, next) => {
                         flowCode:flowCode,
                         customsCode:"C00",
                         motCode:0,
+                        includeDesc:true
                     },
                     headers: {
                         'Cache-Control': 'no-cache'
