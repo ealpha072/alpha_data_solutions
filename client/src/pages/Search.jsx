@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom"
 //import axios from "axios"
 import { useState, useEffect } from "react"
 import Header from "../components/Header"
-import logo from "../assets/logo.png"
 import styles from "../styles/Dashboard.module.css"
 import useForm from "../Hooks/Formhook"
 import userService from "../services/user"
@@ -73,7 +72,7 @@ const Search = () => {
 
     return (
         <div className={styles.mainContainer}>
-            <Header logo={logo} styles={styles}/>
+            <Header status={"Logout"}/>
 
             <div className={styles.homeContainer}>
                 <div className={styles.homeDiv}>

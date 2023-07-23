@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import { Link, useNavigate } from "react-router-dom"
 //import CsvDownloadButton from 'react-json-to-csv'
 import Header from "../components/Header"
-import logo from "../assets/logo.png"
 import styles from "../styles/Dashboard.module.css"
 import ModalOverlay from "../components/Modal"
 
@@ -30,7 +29,7 @@ const Searchresults = () => {
 
     return (
         <div className={styles.mainContainer}>
-            <Header logo={logo} styles={styles}/>
+            <Header status={"Logout"}/>
 
             <div className={styles.homeContainer}>
                 <div className={styles.homeDiv}>
